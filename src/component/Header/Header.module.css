@@ -1,0 +1,24 @@
+.logo {
+    width: 60px;
+    height: auto;
+}
+
+.navButton {
+    margin-bottom: 0px;   
+}
+
+
+  
+.selectedWithBar {
+    position: relative; /* Permet de positionner la barre en dessous */
+}
+  
+.selectedWithBar::after {
+    content: ""; /* Ajoute un élément après le texte */
+    position: absolute; /* Positionnement absolu par rapport au parent */
+    bottom: 1px; /* Place la barre en dessous du texte */
+    left: 0; /* Alignement à gauche */
+    width: 100%; /* Largeur totale du bouton */
+    height: 3px; /* Hauteur de la barre */
+    background-color: #DF4638; /* Couleur de la barre */
+}
