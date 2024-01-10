@@ -53,7 +53,7 @@ const Header = () => {
 					sx={{ alignItems: 'normal' }}>
 					<Box>
 						<img
-							className={classes.logo}
+							style={{ width: '60px', height: 'auto' }}
 							src={logoBCOM}
 							alt='logo BCOM'
 						/>
