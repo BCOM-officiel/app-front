@@ -7,6 +7,7 @@ import TalentCard from "./components/TalentCard";
 import logo from "./logo.svg";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Box } from "@mui/material";
+import Carousel from "./components/Carousel";
 
 const router = createBrowserRouter([
   {
@@ -20,24 +21,106 @@ const router = createBrowserRouter([
       <Box
         sx={{
           display: "grid",
-          placeItems: "center",
+          // placeItems: "center",
+          alignContent: "center",
           minHeight: "100vh",
         }}
       >
-        <Box
-          sx={{
-            width: "100%",
-            maxWidth: "360px",
-          }}
-        >
-          <TalentCard
-            talentId={2}
-            talentName="Laura Dupont"
-            talentProfession="Artiste Graphiste Webdesigner"
-            src={logo}
-            alt="someone"
-          ></TalentCard>
-        </Box>
+        <Carousel
+          slides={[
+            <TalentCard
+              talentId={2}
+              talentName="Laura Dupont"
+              talentProfession="Artiste Graphiste Webdesigner"
+              src={logo}
+              alt="someone"
+            ></TalentCard>,
+            <TalentCard
+              talentId={2}
+              talentName="Laura Dupont"
+              talentProfession="Artiste Graphiste Webdesigner"
+              src={logo}
+              alt="someone"
+            ></TalentCard>,
+            <TalentCard
+              talentId={2}
+              talentName="Laura Dupont"
+              talentProfession="Artiste Graphiste Webdesigner"
+              src={logo}
+              alt="someone"
+            ></TalentCard>,
+            <TalentCard
+              talentId={2}
+              talentName="Laura Dupont"
+              talentProfession="Artiste Graphiste Webdesigner"
+              src={logo}
+              alt="someone"
+            ></TalentCard>,
+            <TalentCard
+              talentId={2}
+              talentName="Laura Dupont"
+              talentProfession="Artiste Graphiste Webdesigner"
+              src={logo}
+              alt="someone"
+            ></TalentCard>,
+            <TalentCard
+              talentId={2}
+              talentName="Laura Dupont"
+              talentProfession="Artiste Graphiste Webdesigner"
+              src={logo}
+              alt="someone"
+            ></TalentCard>,
+            <TalentCard
+              talentId={2}
+              talentName="Laura Dupont"
+              talentProfession="Artiste Graphiste Webdesigner"
+              src={logo}
+              alt="someone"
+            ></TalentCard>,
+            <TalentCard
+              talentId={2}
+              talentName="Laura Dupont"
+              talentProfession="Artiste Graphiste Webdesigner"
+              src={logo}
+              alt="someone"
+            ></TalentCard>,
+            <TalentCard
+              talentId={2}
+              talentName="Laura Dupont"
+              talentProfession="Artiste Graphiste Webdesigner"
+              src={logo}
+              alt="someone"
+            ></TalentCard>,
+            <TalentCard
+              talentId={2}
+              talentName="Laura Dupont"
+              talentProfession="Artiste Graphiste Webdesigner"
+              src={logo}
+              alt="someone"
+            ></TalentCard>,
+            <TalentCard
+              talentId={2}
+              talentName="Laura Dupont"
+              talentProfession="Artiste Graphiste Webdesigner"
+              src={logo}
+              alt="someone"
+            ></TalentCard>,
+            <TalentCard
+              talentId={2}
+              talentName="Laura Dupont"
+              talentProfession="Artiste Graphiste Webdesigner"
+              src={logo}
+              alt="someone"
+            ></TalentCard>,
+            <TalentCard
+              talentId={2}
+              talentName="Laura Dupont"
+              talentProfession="Artiste Graphiste Webdesigner"
+              src={logo}
+              alt="someone"
+            ></TalentCard>,
+          ]}
+        />
       </Box>
     ),
   },
