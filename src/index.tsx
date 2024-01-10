@@ -1,15 +1,54 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import TalentCard from "./components/TalentCard";
+import logo from "./logo.svg";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Box } from "@mui/material";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    // Pour test un composant rapidement. Ne pas garder pour la prod.
+    path: "/lab-1",
+    element: (
+      <Box
+        sx={{
+          display: "grid",
+          placeItems: "center",
+          minHeight: "100vh",
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            maxWidth: "360px",
+          }}
+        >
+          <TalentCard
+            talentId={2}
+            talentName="Laura Dupont"
+            talentProfession="Artiste Graphiste Webdesigner"
+            src={logo}
+            alt="someone"
+          ></TalentCard>
+        </Box>
+      </Box>
+    ),
+  },
+]);
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
