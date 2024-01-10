@@ -46,7 +46,7 @@ const Header = () => {
 	return (
 		<AppBar
 			position='static'
-			sx={{ background: 'transparent', boxShadow: 'none' }}>
+			sx={{ position:'absolute', background: 'transparent', boxShadow: 'none' }}>
 			<Container maxWidth='xl'>
 				<Toolbar
 					disableGutters
