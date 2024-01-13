@@ -9,28 +9,36 @@ interface CarouselProps {
 }
 
 const Carousel = ({ slides }: CarouselProps) => {
-  const [indexCentered, setIndexCentered] = React.useState<number>(3);
+  const defaultIndex = slides.length > 0 ? Math.floor(slides.length / 2) : 0;
+  const [indexCentered, setIndexCentered] =
+    React.useState<number>(defaultIndex);
 
   return (
     <Box
       sx={{
-        overflowX: "scroll",
-        scrollSnapType: "x mandatory",
-        display: "flex",
-        gap: `${slideGap}px`,
-        px: `${slideGap * 4 + slideWidth * 2}px`,
-        "::-webkit-scrollbar": { display: "none" },
+        overflowX: "hidden",
       }}
     >
-      {slides.map((slide: JSX.Element, index) => (
-        <CarouselItem
-          key={index}
-          indexCentered={indexCentered}
-          setIndexCentered={setIndexCentered}
-          index={index}
-          slide={slide}
-        />
-      ))}
+      <Box
+        sx={{
+          overflowX: "scroll",
+          scrollSnapType: "x mandatory",
+          display: "flex",
+          gap: `${slideGap}px`,
+          px: `${slideGap * 4 + slideWidth * 2}px`,
+          "::-webkit-scrollbar": { display: "none" },
+        }}
+      >
+        {slides.map((slide: JSX.Element, index) => (
+          <CarouselItem
+            key={index}
+            indexCentered={indexCentered}
+            setIndexCentered={setIndexCentered}
+            index={index}
+            slide={slide}
+          />
+        ))}
+      </Box>
     </Box>
   );
 };
@@ -54,6 +62,14 @@ const CarouselItem = ({
   const scale = ratio >= 3 ? 0.4 : ratio >= 2 ? 0.5 : ratio >= 1 ? 0.7 : 1;
   const opacity = ratio >= 3 ? 0 : 1;
 
+  const scrollIntoView = (behavior: ScrollBehavior = "auto") => {
+    ref.current?.scrollIntoView({
+      behavior,
+      block: "center",
+      inline: "center",
+    });
+  };
+
   React.useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -65,15 +81,15 @@ const CarouselItem = ({
     observer.observe(ref.current!);
   }, [setIndexCentered, index]);
 
+  React.useEffect(() => {
+    if (index === indexCentered) {
+      scrollIntoView("auto");
+    }
+  }, []);
+
   return (
     <Box
-      onClick={() => {
-        ref.current?.scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-          inline: "center",
-        });
-      }}
+      onClick={() => scrollIntoView("smooth")}
       ref={ref}
       sx={{
         flex: `0 0 ${slideWidth}px`,
