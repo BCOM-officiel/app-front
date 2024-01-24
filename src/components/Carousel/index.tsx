@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, SxProps, Theme } from "@mui/material";
 import React from "react";
 
 const slideWidth = 360;
@@ -6,9 +6,10 @@ const slideGap = 18;
 
 interface CarouselProps {
   slides: JSX.Element[];
+  sx?: SxProps<Theme>;
 }
 
-const Carousel = ({ slides }: CarouselProps) => {
+const Carousel = ({ slides, sx = {} }: CarouselProps) => {
   const defaultIndex = slides.length > 0 ? Math.floor(slides.length / 2) : 0;
   const [indexCentered, setIndexCentered] =
     React.useState<number>(defaultIndex);
@@ -27,6 +28,7 @@ const Carousel = ({ slides }: CarouselProps) => {
           gap: `${slideGap}px`,
           px: `${slideGap * 4 + slideWidth * 2}px`,
           "::-webkit-scrollbar": { display: "none" },
+          ...sx,
         }}
       >
         {slides.map((slide: JSX.Element, index) => (
