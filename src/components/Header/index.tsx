@@ -4,186 +4,168 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import logoBCOM from '../../assets/LogoBCOM.png';
-import classes from './Header.module.css';
-
-const pageGauches: PageType[] = ['Home', 'Talents', 'Évènement', 'Équipe'];
-const pageDroites: PageType[] = ['Contact'];
-const pageDevenir = ["Devenir talent B'Com "];
-
-type PageType =
-	| 'Home'
-	| 'Talents'
-	| 'Évènement'
-	| 'Équipe'
-	| 'Contact'
-	| "Devenir talent B'Com ";
+import styles from './Header.module.css';
+import { useNavigate } from 'react-router-dom';
+import { Drawer, List, ListItem, ListItemText } from '@mui/material';
 
 const Header = () => {
-	const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-		null
-	);
-
+	const navigate = useNavigate();
+	const [drawerOpen, setDrawerOpen] = React.useState(false);
 	const [selectedButton, setSelectedButton] = React.useState('');
 
-	const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-		setAnchorElNav(event.currentTarget);
-	};
-	const handleCloseNavMenu = () => {
-		setAnchorElNav(null);
+	const handleDrawerOpen = () => {
+		setDrawerOpen(true);
 	};
 
-	const handleButtonClick = (clickedPage: string) => {
-		setSelectedButton(clickedPage);
+	const handleDrawerClose = () => {
+		setDrawerOpen(false);
 	};
+
+	const LinkDevenir = (
+		<>
+			<Button
+				className={`${styles.navButton} ${
+					selectedButton ? styles.selectedWithBar : ''
+				}`}
+				onClick={() => navigate('devenir-talent')}
+				sx={{ color: '#DF4638', fontWeight: 800 }}>
+				Devenir talent B'Com
+			</Button>
+		</>
+	);
+
+	const LinksRight = (
+		<>
+			<Button
+				className={`${styles.navButton} ${
+					selectedButton ? styles.selectedWithBar : ''
+				}`}
+				onClick={() => navigate('contact')}
+				color='inherit'
+				sx={{ mr: 4, fontWeight: 800 }}>
+				Contact
+			</Button>
+		</>
+	);
+
+	const LinksLeft = (
+		<>
+			<Button
+				className={`${styles.navButton} ${
+					selectedButton ? styles.selectedWithBar : ''
+				}`}
+				onClick={() => navigate('home')}
+				color='inherit'
+				sx={{ mx: 4, fontWeight: 800 }}>
+				Home
+			</Button>
+			<Button
+				className={`${styles.navButton} ${
+					selectedButton ? styles.selectedWithBar : ''
+				}`}
+				onClick={() => navigate('talents')}
+				color='inherit'
+				sx={{ mr: 4, fontWeight: 800 }}>
+				Talents
+			</Button>
+			<Button
+				className={`${styles.navButton} ${
+					selectedButton ? styles.selectedWithBar : ''
+				}`}
+				onClick={() => navigate('evenement')}
+				color='inherit'
+				sx={{ mr: 4, fontWeight: 800 }}>
+				Évènement
+			</Button>
+			<Button
+				className={`${styles.navButton} ${
+					selectedButton ? styles.selectedWithBar : ''
+				}`}
+				onClick={() => navigate('equipe')}
+				color='inherit'
+				sx={{ mr: 4, fontWeight: 800 }}>
+				Équipe
+			</Button>
+		</>
+	);
+
+	const LinksMobile = (
+		<>
+			<ListItem onClick={() => navigate('home')}>
+				<ListItemText primary='Home' />
+			</ListItem>
+			<ListItem onClick={() => navigate('talents')}>
+				<ListItemText primary='Talents' />
+			</ListItem>
+			<ListItem onClick={() => navigate('evenement')}>
+				<ListItemText primary='Évènement' />
+			</ListItem>
+			<ListItem onClick={() => navigate('equipe')}>
+				<ListItemText primary='Équipe' />
+			</ListItem>
+			<ListItem onClick={() => navigate('contact')}>
+				<ListItemText primary='Contact' />
+			</ListItem>
+			<ListItem onClick={() => navigate('devenir-talent')}>
+				<ListItemText primary="Devenir talent B'Com" />
+			</ListItem>
+		</>
+	);
 
 	return (
-		<AppBar
-			position='static'
-			sx={{ position:'absolute', background: 'transparent', boxShadow: 'none' }}>
-			<Container maxWidth='xl'>
+		<Box>
+			<AppBar
+				className={styles.container}
+				position='static'
+				sx={{ background: 'transparent', boxShadow: 'none' }}>
 				<Toolbar
-					disableGutters
-					sx={{ alignItems: 'normal' }}>
-					<Box>
-						<img
-							style={{ width: '60px', height: 'auto' }}
-							src={logoBCOM}
-							alt='logo BCOM'
-						/>
-					</Box>
-					<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-						<IconButton
-							size='large'
-							aria-label='account of current user'
-							aria-controls='menu-appbar'
-							aria-haspopup='true'
-							onClick={handleOpenNavMenu}
-							color='inherit'>
-							<MenuIcon />
-						</IconButton>
-						<Menu
-							id='menu-appbar'
-							anchorEl={anchorElNav}
-							anchorOrigin={{
-								vertical: 'bottom',
-								horizontal: 'left',
-							}}
-							keepMounted
-							transformOrigin={{
-								vertical: 'top',
-								horizontal: 'left',
-							}}
-							open={Boolean(anchorElNav)}
-							onClose={handleCloseNavMenu}
-							sx={{
-								display: {
-									xs: 'block',
-									md: 'none',
-									textTransform: 'none',
-									fontWeight: 800,
-								},
-							}}>
-							{pageGauches.map((pageGauche) => (
-								<MenuItem
-									key={pageGauche}
-									onClick={handleCloseNavMenu}>
-									<Typography textAlign='center'>{pageGauche}</Typography>
-								</MenuItem>
-							))}
-						</Menu>
-					</Box>
-					<AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-					<Typography
-						variant='h5'
-						noWrap
-						component='a'
-						href='#app-bar-with-responsive-menu'
-						sx={{
-							mr: 2,
-							display: { xs: 'flex', md: 'none' },
-							flexGrow: 1,
-							fontFamily: 'monospace',
-							fontWeight: 700,
-							letterSpacing: '.3rem',
-							color: 'inherit',
-							textDecoration: 'none',
-						}}>
-						LOGO
-					</Typography>
-					<Box
-						sx={{
-							marginLeft: 5,
-							flexGrow: 1,
-							display: { xs: 'none', md: 'flex' },
-							alignItems: 'flex-end',
-						}}>
-						{pageGauches.map((pageGauche) => (
-							<Button
-								className={`${classes.navButton} ${
-									selectedButton === pageGauche ? classes.selectedWithBar : ''
-								}`}
-								key={pageGauche}
-								onClick={() => {
-									handleButtonClick(pageGauche);
-									handleCloseNavMenu();
-								}}
-								sx={{
-									marginRight: 3,
-									color: 'white',
-									display: 'block',
-									textTransform: 'none',
-									fontWeight: selectedButton === pageGauche ? 'bold' : 'normal',
-								}}
-								variant='text'>
-								{pageGauche}
-							</Button>
-						))}
-					</Box>
-					<Box sx={{ flexGrow: 0, alignItems: 'flex-end', display: 'flex' }}>
-						<Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-							{pageDroites.map((pageDroite) => (
-								<Button
-									className={`${classes.navButton} ${
-										selectedButton === pageDroite ? classes.selectedWithBar : ''
-									}`}
-									key={pageDroite}
-									onClick={() => {
-										handleButtonClick(pageDroite);
-										handleCloseNavMenu();
-									}}
-									sx={{
-										marginRight: 5,
-										color: 'white',
-										display: 'block',
-										textTransform: 'none',
-										fontWeight: 800,
-									}}>
-									{pageDroite}
-								</Button>
-							))}
-							<Button
-								className={classes.navButton}
-								onClick={handleCloseNavMenu}
-								sx={{
-									color: '#DF4638',
-									display: 'block',
-									textTransform: 'none',
-									fontWeight: 800,
-								}}>
-								{pageDevenir}
-							</Button>
+					sx={{
+						display: { xs: 'flex', md: 'flex' },
+						justifyContent: 'space-between',
+						alignItems: 'end',
+					}}>
+					<Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+						<Typography
+							variant='h6'
+							component='div'>
+							<img
+								onClick={() => navigate('/')}
+								className={styles.logo}
+								src={logoBCOM}
+								alt=''
+							/>
+						</Typography>
+						<Box
+							sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'end' }}>
+							{LinksLeft}
 						</Box>
 					</Box>
+					<Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+						{LinksRight}
+						{LinkDevenir}
+					</Box>
+					<IconButton
+						size='large'
+						edge='start'
+						color='inherit'
+						aria-label='menu'
+						className={styles.menuButton}
+						sx={{ mr: 2, display: { md: 'none' } }}
+						onClick={handleDrawerOpen}>
+						<MenuIcon />
+					</IconButton>
 				</Toolbar>
-			</Container>
-		</AppBar>
+			</AppBar>
+			<Drawer
+				anchor='right'
+				open={drawerOpen}
+				onClose={handleDrawerClose}>
+				<List>{LinksMobile}</List>
+			</Drawer>
+		</Box>
 	);
 };
 

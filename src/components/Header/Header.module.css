@@ -1,3 +1,14 @@
+.container {
+    position: absolute;
+    background-color: #111;
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+}
 
 .navButton {
     margin-bottom: 0px;   
