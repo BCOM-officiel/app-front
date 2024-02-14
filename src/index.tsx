@@ -1,128 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import TalentCard from "./components/TalentCard";
-import logo from "./logo.svg";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Box } from "@mui/material";
-import Carousel from "./components/Carousel";
+import { Lab1 } from "./pages/Lab1";
+import { Home } from "./pages/Home";
+import Header from "./components/Header";
+import Footer from "./components/footer";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Home />,
   },
   {
     // Pour test un composant rapidement. Ne pas garder pour la prod.
     path: "/lab-1",
-    element: (
-      <Box
-        sx={{
-          display: "grid",
-          // placeItems: "center",
-          alignContent: "center",
-          minHeight: "100vh",
-        }}
-      >
-        <Carousel
-          slides={[
-            <TalentCard
-              talentId={2}
-              talentName="Laura Dupont"
-              talentProfession="Artiste Graphiste Webdesigner"
-              src={logo}
-              alt="someone"
-            ></TalentCard>,
-            <TalentCard
-              talentId={2}
-              talentName="Laura Dupont"
-              talentProfession="Artiste Graphiste Webdesigner"
-              src={logo}
-              alt="someone"
-            ></TalentCard>,
-            <TalentCard
-              talentId={2}
-              talentName="Laura Dupont"
-              talentProfession="Artiste Graphiste Webdesigner"
-              src={logo}
-              alt="someone"
-            ></TalentCard>,
-            <TalentCard
-              talentId={2}
-              talentName="Laura Dupont"
-              talentProfession="Artiste Graphiste Webdesigner"
-              src={logo}
-              alt="someone"
-            ></TalentCard>,
-            <TalentCard
-              talentId={2}
-              talentName="Laura Dupont"
-              talentProfession="Artiste Graphiste Webdesigner"
-              src={logo}
-              alt="someone"
-            ></TalentCard>,
-            <TalentCard
-              talentId={2}
-              talentName="Laura Dupont"
-              talentProfession="Artiste Graphiste Webdesigner"
-              src={logo}
-              alt="someone"
-            ></TalentCard>,
-            <TalentCard
-              talentId={2}
-              talentName="Laura Dupont"
-              talentProfession="Artiste Graphiste Webdesigner"
-              src={logo}
-              alt="someone"
-            ></TalentCard>,
-            <TalentCard
-              talentId={2}
-              talentName="Laura Dupont"
-              talentProfession="Artiste Graphiste Webdesigner"
-              src={logo}
-              alt="someone"
-            ></TalentCard>,
-            <TalentCard
-              talentId={2}
-              talentName="Laura Dupont"
-              talentProfession="Artiste Graphiste Webdesigner"
-              src={logo}
-              alt="someone"
-            ></TalentCard>,
-            <TalentCard
-              talentId={2}
-              talentName="Laura Dupont"
-              talentProfession="Artiste Graphiste Webdesigner"
-              src={logo}
-              alt="someone"
-            ></TalentCard>,
-            <TalentCard
-              talentId={2}
-              talentName="Laura Dupont"
-              talentProfession="Artiste Graphiste Webdesigner"
-              src={logo}
-              alt="someone"
-            ></TalentCard>,
-            <TalentCard
-              talentId={2}
-              talentName="Laura Dupont"
-              talentProfession="Artiste Graphiste Webdesigner"
-              src={logo}
-              alt="someone"
-            ></TalentCard>,
-            <TalentCard
-              talentId={2}
-              talentName="Laura Dupont"
-              talentProfession="Artiste Graphiste Webdesigner"
-              src={logo}
-              alt="someone"
-            ></TalentCard>,
-          ]}
-        />
-      </Box>
-    ),
+    element: <Lab1 />,
   },
 ]);
 
@@ -131,7 +25,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
+    <Header />
     <RouterProvider router={router} />
+    <Footer pages={[]} />
   </React.StrictMode>
 );
 

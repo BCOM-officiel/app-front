@@ -33,6 +33,8 @@ const TalentCard = ({
           boxShadow: 3,
           aspectRatio: "7/8",
           mb: 1,
+          objectFit: "cover",
+          objectPosition: "center center",
         }}
       />
       <Typography component="span" fontWeight="700" sx={{ ...textSx }}>
