@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "./Hero";
 import { Box, Container, Typography } from "@mui/material";
 import CustomButton from "../../components/button";
-import Carousel from "../../components/Carousel";
+import Carousel from "../../components/Carousel/index.back";
 import TalentCard from "../../components/TalentCard";
 import picture from "../../assets/pexels-karolina-grabowska-4471894.jpg";
 

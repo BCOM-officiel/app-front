@@ -2,7 +2,7 @@ import React from "react";
 import TalentCard from "../components/TalentCard";
 import { Box } from "@mui/material";
 import logo from "./../logo.svg";
-import Carousel from "../components/Carousel";
+import Carousel from "../components/Carousel/index.back";
 
 export const Lab1 = () => {
   return (
