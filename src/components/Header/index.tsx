@@ -116,11 +116,11 @@ const Header = () => {
 	);
 
 	return (
-		<Box>
+		<>
 			<AppBar
 				className={styles.container}
-				position='static'
-				sx={{ background: 'transparent', boxShadow: 'none' }}>
+				position='absolute'
+				sx={{ boxShadow: 'none', backgroundColor:'transparent' }}>
 				<Toolbar
 					sx={{
 						display: { xs: 'flex', md: 'flex' },
@@ -165,7 +165,7 @@ const Header = () => {
 				onClose={handleDrawerClose}>
 				<List>{LinksMobile}</List>
 			</Drawer>
-		</Box>
+		</>
 	);
 };
 
