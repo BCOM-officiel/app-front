@@ -67,6 +67,7 @@ export default function Carousel({ children, sx, ...boxProps }: Props) {
                 pointerEvents: "none",
                 scale: `${1 - Math.abs(index - i) / 5}`,
                 transition: "scale 100ms ease-in-out",
+                mx: 1,
               },
             }}
             onClick={() => {
