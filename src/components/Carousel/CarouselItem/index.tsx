@@ -2,7 +2,7 @@ import { Box, Link, Typography } from "@mui/material";
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 
-interface TalentCardProps {
+interface CarouselItemProps {
   talentId: number;
   talentName: string;
   talentProfession: string;
@@ -10,13 +10,13 @@ interface TalentCardProps {
   src: string;
 }
 
-const TalentCard = ({
+const CarouselItem = ({
   talentId,
   talentName,
   talentProfession,
   alt,
   src,
-}: TalentCardProps) => {
+}: CarouselItemProps) => {
   const textSx = {
     color: "#333",
     textDecorationColor: "#777",
@@ -53,4 +53,4 @@ const TalentCard = ({
   );
 };
 
-export default TalentCard;
+export default CarouselItem;

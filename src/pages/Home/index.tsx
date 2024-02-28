@@ -3,7 +3,7 @@ import Hero from "./Hero";
 import { Box, Container, Typography } from "@mui/material";
 import CustomButton from "../../components/button";
 import Carousel from "../../components/Carousel/index";
-import TalentCard from "../../components/TalentCard";
+import CarouselItem from "../../components/Carousel/CarouselItem";
 import picture from "../../assets/pexels-karolina-grabowska-4471894.jpg";
 
 export const Home = () => {
@@ -72,97 +72,97 @@ export const Home = () => {
           mb: "128px",
         }}
       >
-        <TalentCard
+        <CarouselItem
           talentId={2}
           talentName="Laura Dupont"
           talentProfession="Artiste Graphiste Webdesigner"
           src={picture}
           alt="someone"
-        ></TalentCard>
-        <TalentCard
+        ></CarouselItem>
+        <CarouselItem
           talentId={2}
           talentName="Laura Dupont"
           talentProfession="Artiste Graphiste Webdesigner"
           src={picture}
           alt="someone"
-        ></TalentCard>
-        <TalentCard
+        ></CarouselItem>
+        <CarouselItem
           talentId={2}
           talentName="Laura Dupont"
           talentProfession="Artiste Graphiste Webdesigner"
           src={picture}
           alt="someone"
-        ></TalentCard>
-        <TalentCard
+        ></CarouselItem>
+        <CarouselItem
           talentId={2}
           talentName="Laura Dupont"
           talentProfession="Artiste Graphiste Webdesigner"
           src={picture}
           alt="someone"
-        ></TalentCard>
-        <TalentCard
+        ></CarouselItem>
+        <CarouselItem
           talentId={2}
           talentName="Laura Dupont"
           talentProfession="Artiste Graphiste Webdesigner"
           src={picture}
           alt="someone"
-        ></TalentCard>
-        <TalentCard
+        ></CarouselItem>
+        <CarouselItem
           talentId={2}
           talentName="Laura Dupont"
           talentProfession="Artiste Graphiste Webdesigner"
           src={picture}
           alt="someone"
-        ></TalentCard>
-        <TalentCard
+        ></CarouselItem>
+        <CarouselItem
           talentId={2}
           talentName="Laura Dupont"
           talentProfession="Artiste Graphiste Webdesigner"
           src={picture}
           alt="someone"
-        ></TalentCard>
-        <TalentCard
+        ></CarouselItem>
+        <CarouselItem
           talentId={2}
           talentName="Laura Dupont"
           talentProfession="Artiste Graphiste Webdesigner"
           src={picture}
           alt="someone"
-        ></TalentCard>
-        <TalentCard
+        ></CarouselItem>
+        <CarouselItem
           talentId={2}
           talentName="Laura Dupont"
           talentProfession="Artiste Graphiste Webdesigner"
           src={picture}
           alt="someone"
-        ></TalentCard>
-        <TalentCard
+        ></CarouselItem>
+        <CarouselItem
           talentId={2}
           talentName="Laura Dupont"
           talentProfession="Artiste Graphiste Webdesigner"
           src={picture}
           alt="someone"
-        ></TalentCard>
-        <TalentCard
+        ></CarouselItem>
+        <CarouselItem
           talentId={2}
           talentName="Laura Dupont"
           talentProfession="Artiste Graphiste Webdesigner"
           src={picture}
           alt="someone"
-        ></TalentCard>
-        <TalentCard
+        ></CarouselItem>
+        <CarouselItem
           talentId={2}
           talentName="Laura Dupont"
           talentProfession="Artiste Graphiste Webdesigner"
           src={picture}
           alt="someone"
-        ></TalentCard>
-        <TalentCard
+        ></CarouselItem>
+        <CarouselItem
           talentId={2}
           talentName="Laura Dupont"
           talentProfession="Artiste Graphiste Webdesigner"
           src={picture}
           alt="someone"
-        ></TalentCard>
+        ></CarouselItem>
         ,
       </Carousel>
       <Container maxWidth="lg">

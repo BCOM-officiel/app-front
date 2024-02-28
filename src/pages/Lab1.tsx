@@ -1,5 +1,5 @@
 import React from "react";
-import TalentCard from "../components/TalentCard";
+import TalentCard from "../components/Carousel/CarouselItem";
 import { Box } from "@mui/material";
 import logo from "./../logo.svg";
 import Carousel from "../components/Carousel/index";
