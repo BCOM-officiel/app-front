@@ -1,161 +1,25 @@
 import React from "react";
-import TalentCard from "../components/TalentCard";
 import { Box } from "@mui/material";
-import logo from "./../logo.svg";
-import Carousel from "../components/Carousel/index";
+import TalentCard from "../components/TalentCard";
+import pic from "../assets/pexels-karolina-grabowska-4471894.jpg";
 
 export const Lab1 = () => {
   return (
     <Box
       sx={{
         display: "grid",
-        // placeItems: "center",
+        placeItems: "center",
         alignContent: "center",
         minHeight: "100vh",
+        background: "rgb(0 0 0 / 0.1 )",
       }}
     >
-      <Carousel>
-        <TalentCard
-          talentId={2}
-          talentName="Laura Dupont"
-          talentProfession="Artiste Graphiste Webdesigner"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-        <TalentCard
-          talentId={1}
-          talentName="Poney"
-          talentProfession="Je suis le poney"
-          src={logo}
-          alt="someone"
-        ></TalentCard>
-      </Carousel>
+      <TalentCard
+        id={1}
+        name="Laura Dupont"
+        picture={pic}
+        job="Artiste Graphiste Webdesigner"
+      />
     </Box>
   );
 };
