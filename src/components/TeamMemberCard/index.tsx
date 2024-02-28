@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardContent, Typography, Avatar, CardMedia } from '@mui/material';
-import micka from '../../assets/micka.png';
 
 type ProfileCardProps = {
   firstName: string;
@@ -25,7 +24,7 @@ const TeamMemberCard: React.FC<ProfileCardProps> = ({ firstName, profession, ima
       <CardMedia
         component="img"
         height="400"
-        image={micka}
+        image={imageUrl}
         alt={`${firstName}`}
         sx={{ marginTop: 12 }}
       />

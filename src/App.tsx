@@ -3,6 +3,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import logo from './logo.svg';
 import './App.css';
 import Footer from './components/footer';
+import TeamMemberCard from './components/TeamMemberCard';
 
 
 const theme = createTheme({
@@ -36,6 +37,13 @@ function App() {
             Learn React
           </a>
         </header>
+        <TeamMemberCard
+          firstName="Mickaël"
+          profession="Formateur"
+          imageUrl={logo}
+          color="blue"
+          textColor="white"
+        />
         <Footer pages={pages} />
       </div>
     </ThemeProvider>
