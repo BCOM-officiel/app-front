@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "./Hero";
 import { Box, Container, Typography } from "@mui/material";
 import CustomButton from "../../components/button";
-import Carousel from "../../components/Carousel/index.back";
+import Carousel from "../../components/Carousel/index";
 import TalentCard from "../../components/TalentCard";
 import picture from "../../assets/pexels-karolina-grabowska-4471894.jpg";
 
@@ -71,100 +71,100 @@ export const Home = () => {
         sx={{
           mb: "128px",
         }}
-        slides={[
-          <TalentCard
-            talentId={2}
-            talentName="Laura Dupont"
-            talentProfession="Artiste Graphiste Webdesigner"
-            src={picture}
-            alt="someone"
-          ></TalentCard>,
-          <TalentCard
-            talentId={2}
-            talentName="Laura Dupont"
-            talentProfession="Artiste Graphiste Webdesigner"
-            src={picture}
-            alt="someone"
-          ></TalentCard>,
-          <TalentCard
-            talentId={2}
-            talentName="Laura Dupont"
-            talentProfession="Artiste Graphiste Webdesigner"
-            src={picture}
-            alt="someone"
-          ></TalentCard>,
-          <TalentCard
-            talentId={2}
-            talentName="Laura Dupont"
-            talentProfession="Artiste Graphiste Webdesigner"
-            src={picture}
-            alt="someone"
-          ></TalentCard>,
-          <TalentCard
-            talentId={2}
-            talentName="Laura Dupont"
-            talentProfession="Artiste Graphiste Webdesigner"
-            src={picture}
-            alt="someone"
-          ></TalentCard>,
-          <TalentCard
-            talentId={2}
-            talentName="Laura Dupont"
-            talentProfession="Artiste Graphiste Webdesigner"
-            src={picture}
-            alt="someone"
-          ></TalentCard>,
-          <TalentCard
-            talentId={2}
-            talentName="Laura Dupont"
-            talentProfession="Artiste Graphiste Webdesigner"
-            src={picture}
-            alt="someone"
-          ></TalentCard>,
-          <TalentCard
-            talentId={2}
-            talentName="Laura Dupont"
-            talentProfession="Artiste Graphiste Webdesigner"
-            src={picture}
-            alt="someone"
-          ></TalentCard>,
-          <TalentCard
-            talentId={2}
-            talentName="Laura Dupont"
-            talentProfession="Artiste Graphiste Webdesigner"
-            src={picture}
-            alt="someone"
-          ></TalentCard>,
-          <TalentCard
-            talentId={2}
-            talentName="Laura Dupont"
-            talentProfession="Artiste Graphiste Webdesigner"
-            src={picture}
-            alt="someone"
-          ></TalentCard>,
-          <TalentCard
-            talentId={2}
-            talentName="Laura Dupont"
-            talentProfession="Artiste Graphiste Webdesigner"
-            src={picture}
-            alt="someone"
-          ></TalentCard>,
-          <TalentCard
-            talentId={2}
-            talentName="Laura Dupont"
-            talentProfession="Artiste Graphiste Webdesigner"
-            src={picture}
-            alt="someone"
-          ></TalentCard>,
-          <TalentCard
-            talentId={2}
-            talentName="Laura Dupont"
-            talentProfession="Artiste Graphiste Webdesigner"
-            src={picture}
-            alt="someone"
-          ></TalentCard>,
-        ]}
-      />
+      >
+        <TalentCard
+          talentId={2}
+          talentName="Laura Dupont"
+          talentProfession="Artiste Graphiste Webdesigner"
+          src={picture}
+          alt="someone"
+        ></TalentCard>
+        <TalentCard
+          talentId={2}
+          talentName="Laura Dupont"
+          talentProfession="Artiste Graphiste Webdesigner"
+          src={picture}
+          alt="someone"
+        ></TalentCard>
+        <TalentCard
+          talentId={2}
+          talentName="Laura Dupont"
+          talentProfession="Artiste Graphiste Webdesigner"
+          src={picture}
+          alt="someone"
+        ></TalentCard>
+        <TalentCard
+          talentId={2}
+          talentName="Laura Dupont"
+          talentProfession="Artiste Graphiste Webdesigner"
+          src={picture}
+          alt="someone"
+        ></TalentCard>
+        <TalentCard
+          talentId={2}
+          talentName="Laura Dupont"
+          talentProfession="Artiste Graphiste Webdesigner"
+          src={picture}
+          alt="someone"
+        ></TalentCard>
+        <TalentCard
+          talentId={2}
+          talentName="Laura Dupont"
+          talentProfession="Artiste Graphiste Webdesigner"
+          src={picture}
+          alt="someone"
+        ></TalentCard>
+        <TalentCard
+          talentId={2}
+          talentName="Laura Dupont"
+          talentProfession="Artiste Graphiste Webdesigner"
+          src={picture}
+          alt="someone"
+        ></TalentCard>
+        <TalentCard
+          talentId={2}
+          talentName="Laura Dupont"
+          talentProfession="Artiste Graphiste Webdesigner"
+          src={picture}
+          alt="someone"
+        ></TalentCard>
+        <TalentCard
+          talentId={2}
+          talentName="Laura Dupont"
+          talentProfession="Artiste Graphiste Webdesigner"
+          src={picture}
+          alt="someone"
+        ></TalentCard>
+        <TalentCard
+          talentId={2}
+          talentName="Laura Dupont"
+          talentProfession="Artiste Graphiste Webdesigner"
+          src={picture}
+          alt="someone"
+        ></TalentCard>
+        <TalentCard
+          talentId={2}
+          talentName="Laura Dupont"
+          talentProfession="Artiste Graphiste Webdesigner"
+          src={picture}
+          alt="someone"
+        ></TalentCard>
+        <TalentCard
+          talentId={2}
+          talentName="Laura Dupont"
+          talentProfession="Artiste Graphiste Webdesigner"
+          src={picture}
+          alt="someone"
+        ></TalentCard>
+        <TalentCard
+          talentId={2}
+          talentName="Laura Dupont"
+          talentProfession="Artiste Graphiste Webdesigner"
+          src={picture}
+          alt="someone"
+        ></TalentCard>
+        ,
+      </Carousel>
       <Container maxWidth="lg">
         <Typography
           component="h2"
