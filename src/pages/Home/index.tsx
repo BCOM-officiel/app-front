@@ -5,6 +5,7 @@ import CustomButton from "../../components/button";
 import Carousel from "../../components/Carousel/index.back";
 import TalentCard from "../../components/TalentCard";
 import picture from "../../assets/pexels-karolina-grabowska-4471894.jpg";
+import FormInput from "../../components/FormInput";
 
 export const Home = () => {
   return (
