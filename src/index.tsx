@@ -7,6 +7,7 @@ import { Lab1 } from "./pages/Lab1";
 import { Home } from "./pages/Home";
 import Header from "./components/Header";
 import Footer from "./components/footer";
+import Profil from "./pages/Profil";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/profil",
+        element: <Profil />,
       },
       {
         // Pour test un composant rapidement. Ne pas garder pour la prod.
