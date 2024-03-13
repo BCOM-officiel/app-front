@@ -5,9 +5,9 @@ import reportWebVitals from "./reportWebVitals";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Lab1 } from "./pages/Lab1";
 import { Home } from "./pages/Home";
+import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import Footer from "./components/footer";
-import ContactTeamForm from "./components/ContactTeamForm";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +15,6 @@ const router = createBrowserRouter([
       <>
         <Header />
         <Outlet />
-        <ContactTeamForm />
         <Footer pages={[]} />
       </>
     ),
@@ -23,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
       },
       {
         // Pour test un composant rapidement. Ne pas garder pour la prod.
