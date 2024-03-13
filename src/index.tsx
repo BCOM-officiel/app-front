@@ -7,6 +7,7 @@ import { Lab1 } from "./pages/Lab1";
 import { Home } from "./pages/Home";
 import Header from "./components/Header";
 import Footer from "./components/footer";
+import ContactTeamForm from "./components/ContactTeamForm";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
       <>
         <Header />
         <Outlet />
+        <ContactTeamForm />
         <Footer pages={[]} />
       </>
     ),
