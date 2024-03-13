@@ -27,11 +27,10 @@ const Profil = () => {
 				</Box>
 			</Box>
 			<Box sx={{ display: 'flex', mt: 8 }}>
-				<Box sx={{ flex: 1, pr: 40 }}>
-					<Typography variant='h4'>A propos</Typography>
+				<Box sx={{ flex: 1, pr: 15 }}>
+					<Typography variant='h4' sx={{ mb: 3 }}>A propos</Typography>
 					<Typography
-						variant='body1'
-						sx={{ textAlign: 'justify' }}>
+						variant='body1'>
 						{jsonData.data.attributes.about_content}
 					</Typography>
 				</Box>
