@@ -11,9 +11,9 @@ type ProfileCardProps = {
 
 const TeamMemberCard: React.FC<ProfileCardProps> = ({ firstName, profession, imageUrl, color, textColor }) => {
   return (
-    <Card sx={{ maxWidth: 300, backgroundColor: color }}>
+    <Card sx={{ width: 350, maxWidth: 400, backgroundColor: color, borderRadius:'0' }}>
      
-      <CardContent>
+      <CardContent sx={{ textAlign: 'center'}}>
         <Typography gutterBottom variant="h5" component="div" sx={{marginTop: 10 , color:`${textColor}`}}>
           {firstName}
         </Typography>
@@ -23,10 +23,10 @@ const TeamMemberCard: React.FC<ProfileCardProps> = ({ firstName, profession, ima
       </CardContent>
       <CardMedia
         component="img"
-        height="400"
+        height="600"
         image={imageUrl}
         alt={`${firstName}`}
-        sx={{ marginTop: 12 }}
+        sx={{marginTop: 12}}
       />
     </Card>
   );
