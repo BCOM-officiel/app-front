@@ -1,4 +1,3 @@
-import React from "react";
 import { Grid, Typography, Link, Box, TextField, Button } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 

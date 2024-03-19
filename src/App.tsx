@@ -17,7 +17,8 @@ function App() {
     { title: 'Accueil', url: '/' },
     { title: 'Talents', url: '/talents' },
     { title: 'Événements', url: '/evenements' },
-    { title: 'Équipe', url: '/equipe' }
+    { title: 'Équipe', url: '/equipe' },
+    { title: 'Contact', url: '/contact' },
   ];
 
   return (
