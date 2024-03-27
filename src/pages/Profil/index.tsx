@@ -1,8 +1,9 @@
 import { Box, Container, Typography } from '@mui/material';
-import jsonData from '../Profil/exp.json';
+import mockData from '../Profil/mock.json';
 
 const Profil = () => {
-
+const skills = mockData.data.attributes.skills.map((skill) => skill.name);
+const places = mockData.data.attributes.card.places.map((place) => place.name);
 	return (
 		<Container
 			sx={{
@@ -12,10 +13,10 @@ const Profil = () => {
 			<Box sx={{ display: 'flex' }}>
 				<Box>
 					<Typography variant='h3'>
-						{jsonData.data.attributes.headline_title}
+						{mockData.data.attributes.headline.title}
 					</Typography>
 					<Typography variant='body1'>
-						{jsonData.data.attributes.headline_subtitle}
+						{mockData.data.attributes.headline.subtitle}
 					</Typography>
 				</Box>
 				<Box>
@@ -26,12 +27,15 @@ const Profil = () => {
 					/>
 				</Box>
 			</Box>
-			<Box sx={{ display: 'flex', mt: 8 }}>
-				<Box sx={{ flex: 1, pr: 15 }}>
-					<Typography variant='h4' sx={{ mb: 3 }}>A propos</Typography>
+			<Box sx={{ display: 'flex', mt: 4 }}>
+				<Box sx={{ flex: 1, pr: 5 }}>
 					<Typography
-						variant='body1'>
-						{jsonData.data.attributes.about_content}
+						variant='h4'
+						sx={{ mb: 3 }}>
+						A propos
+					</Typography>
+					<Typography variant='body1'>
+						{mockData.data.attributes.about}
 					</Typography>
 				</Box>
 				<Box sx={{ pl: 5 }}>
@@ -40,7 +44,8 @@ const Profil = () => {
 							boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.1)',
 							backgroundColor: 'transparent',
 							borderRadius: 4,
-							p: 7,
+							py: 3,
+							px: 1,
 						}}>
 						<Box
 							sx={{
@@ -57,13 +62,13 @@ const Profil = () => {
 								<Typography
 									variant='body1'
 									textAlign='end'>
-									{jsonData.data.attributes.card_lastname}{' '}
-									{jsonData.data.attributes.card_firstname}
+									{mockData.data.attributes.card.lastname}
+									{mockData.data.attributes.card.firstname}
 								</Typography>
 								<Typography
 									variant='body1'
 									textAlign='end'>
-									{jsonData.data.attributes.card_job}
+									{mockData.data.attributes.card.jobs}
 								</Typography>
 								<Typography
 									component='span'
@@ -77,10 +82,42 @@ const Profil = () => {
 										fontSize: 12,
 										fontWeight: 600,
 									}}>
-									{jsonData.data.attributes.card_places}
+									{places}
 								</Typography>
 							</Box>
 						</Box>
+					</Box>
+					<Box mt={20}>
+						{skills.map((skill, index) => (
+							<Box
+								key={index}
+								sx={{
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'space-between',
+									borderBottom: '1px solid white',
+									pb: 4,
+								}}>
+								<Typography
+									variant='h3'
+									sx={{ width: '50px', textAlign: 'left', color: '#B3B3B3' }}>{`${(index + 1)
+									.toString()
+									.padStart(2, '0')}`}</Typography>
+								<Typography
+									variant='h3'
+									sx={{ flexGrow: 1, textAlign: 'left', ml: 4, textTransform: 'capitalize' }}>
+									{skill.toLowerCase()}
+								</Typography>
+								<Box
+									sx={{
+										width: '30px',
+										height: '30px',
+										borderRadius: '50%',
+										backgroundColor: '#ff0000',
+									}}
+								/>
+							</Box>
+						))}
 					</Box>
 				</Box>
 			</Box>
