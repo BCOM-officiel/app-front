@@ -27,26 +27,13 @@ const Header = () => {
 	const LinkDevenir = (
 		<>
 			<Button
+				variant='contained'
 				className={`${styles.navButton} ${
 					selectedButton ? styles.selectedWithBar : ''
 				}`}
 				onClick={() => navigate('devenir-talent')}
-				sx={{ color: '#DF4638', fontWeight: 800 }}>
+				sx={{ backgroundColor: '#eda44d', fontWeight: 800, ':hover': { backgroundColor:'#104262'} }}>
 				Devenir talent B'Com
-			</Button>
-		</>
-	);
-
-	const LinksRight = (
-		<>
-			<Button
-				className={`${styles.navButton} ${
-					selectedButton ? styles.selectedWithBar : ''
-				}`}
-				onClick={() => navigate('contact')}
-				color='inherit'
-				sx={{ mr: 4, fontWeight: 800 }}>
-				Contact
 			</Button>
 		</>
 	);
@@ -58,8 +45,7 @@ const Header = () => {
 					selectedButton ? styles.selectedWithBar : ''
 				}`}
 				onClick={() => navigate('home')}
-				color='inherit'
-				sx={{ mx: 4, fontWeight: 800 }}>
+				sx={{ mx: 4, fontWeight: 800, color:'#104262' }}>
 				Home
 			</Button>
 			<Button
@@ -67,8 +53,7 @@ const Header = () => {
 					selectedButton ? styles.selectedWithBar : ''
 				}`}
 				onClick={() => navigate('talents')}
-				color='inherit'
-				sx={{ mr: 4, fontWeight: 800 }}>
+				sx={{ mr: 4, fontWeight: 800, color:'#104262'}}>
 				Talents
 			</Button>
 			<Button
@@ -76,8 +61,7 @@ const Header = () => {
 					selectedButton ? styles.selectedWithBar : ''
 				}`}
 				onClick={() => navigate('evenement')}
-				color='inherit'
-				sx={{ mr: 4, fontWeight: 800 }}>
+				sx={{ mr: 4, fontWeight: 800, color:'#104262' }}>
 				Évènement
 			</Button>
 			<Button
@@ -85,9 +69,16 @@ const Header = () => {
 					selectedButton ? styles.selectedWithBar : ''
 				}`}
 				onClick={() => navigate('equipe')}
-				color='inherit'
-				sx={{ mr: 4, fontWeight: 800 }}>
+				sx={{ mr: 4, fontWeight: 800, color:'#104262' }}>
 				Équipe
+			</Button>
+			<Button
+				className={`${styles.navButton} ${
+					selectedButton ? styles.selectedWithBar : ''
+				}`}
+				onClick={() => navigate('contact')}
+				sx={{ mr: 4, fontWeight: 800, color:'#104262' }}>
+				Contact
 			</Button>
 		</>
 	);
@@ -144,7 +135,6 @@ const Header = () => {
 						</Box>
 					</Box>
 					<Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-						{LinksRight}
 						{LinkDevenir}
 					</Box>
 					<IconButton

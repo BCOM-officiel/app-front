@@ -17,35 +17,13 @@ function App() {
     { title: 'Accueil', url: '/' },
     { title: 'Talents', url: '/talents' },
     { title: 'Événements', url: '/evenements' },
-    { title: 'Équipe', url: '/equipe' }
+    { title: 'Équipe', url: '/equipe' },
+    { title: 'Contact', url: '/contact' },
   ];
 
   return (
     <ThemeProvider theme={theme}> 
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-        <TeamMemberCard
-          firstName="Mickaël"
-          profession="Formateur"
-          imageUrl={logo}
-          color="blue"
-          textColor="white"
-        />
-        <Footer pages={pages} />
-      </div>
+    
     </ThemeProvider>
   );
 }

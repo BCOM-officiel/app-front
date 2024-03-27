@@ -17,8 +17,8 @@ const FormInput = ({
 				display: 'flex',
 				flexDirection: 'column',
 			}}>
-			<Typography component="label" mb={1}>
-				{label} {required && '*'}
+			<Typography component="label" mb={1} sx={{fontWeight: "bold"}}>
+				{label} {required}
 			</Typography>
 			<TextField
 				variant='outlined'
@@ -29,6 +29,7 @@ const FormInput = ({
 					},
 					boxShadow: '0px 3px 6px rgba(0, 0, 0, 0.1)',
 					backgroundColor: 'transparent',
+					maxWidth:"250px"
 				}}
 				type={type}
 			/>
