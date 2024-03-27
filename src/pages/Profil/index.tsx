@@ -1,9 +1,18 @@
 import { Box, Container, Typography } from '@mui/material';
 import mockData from '../Profil/mock.json';
+import Portfolio from '../../components/Portfolio';
+import CustomButton from '../../components/button';
 
 const Profil = () => {
-const skills = mockData.data.attributes.skills.map((skill) => skill.name);
-const places = mockData.data.attributes.card.places.map((place) => place.name);
+	const skills = mockData.data.attributes.skills.map((skill) => skill.name);
+	const places = mockData.data.attributes.card.places.map(
+		(place) => place.name
+	);
+
+	const portfolioImages = mockData.data.attributes.portfolio.map(
+		(item) => item.link
+	);
+
 	return (
 		<Container
 			sx={{
@@ -27,7 +36,7 @@ const places = mockData.data.attributes.card.places.map((place) => place.name);
 					/>
 				</Box>
 			</Box>
-			<Box sx={{ display: 'flex', mt: 4 }}>
+			<Box sx={{ display: 'flex', mt: 4, mb: 6 }}>
 				<Box sx={{ flex: 1, pr: 5 }}>
 					<Typography
 						variant='h4'
@@ -100,12 +109,19 @@ const places = mockData.data.attributes.card.places.map((place) => place.name);
 								}}>
 								<Typography
 									variant='h3'
-									sx={{ width: '50px', textAlign: 'left', color: '#B3B3B3' }}>{`${(index + 1)
-									.toString()
-									.padStart(2, '0')}`}</Typography>
+									sx={{
+										width: '50px',
+										textAlign: 'left',
+										color: '#B3B3B3',
+									}}>{`${(index + 1).toString().padStart(2, '0')}`}</Typography>
 								<Typography
 									variant='h3'
-									sx={{ flexGrow: 1, textAlign: 'left', ml: 4, textTransform: 'capitalize' }}>
+									sx={{
+										flexGrow: 1,
+										textAlign: 'left',
+										ml: 4,
+										textTransform: 'capitalize',
+									}}>
 									{skill.toLowerCase()}
 								</Typography>
 								<Box
@@ -120,6 +136,32 @@ const places = mockData.data.attributes.card.places.map((place) => place.name);
 						))}
 					</Box>
 				</Box>
+			</Box>
+			<Box>
+				<Typography
+					variant='h4'
+					sx={{ textAlign: 'end', mb: 4 }}>
+					Portfolio
+				</Typography>
+				<Portfolio>
+					{portfolioImages.map((image, index) => (
+						<Box key={index}>
+							<img
+								src={image}
+								alt='image portfolio'
+								onError={(e) => {
+									const target = e.target as HTMLImageElement;
+									console.log("Erreur de chargement de l'image :", target.src);
+								}}
+							/>
+						</Box>
+					))}
+				</Portfolio>
+			</Box>
+			<Box sx={{ display: 'flex', justifyContent: 'flex-end', mt: 4 }}>
+				<CustomButton>
+					Contactez {mockData.data.attributes.card.firstname}
+				</CustomButton>
 			</Box>
 		</Container>
 	);
