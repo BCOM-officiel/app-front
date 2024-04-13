@@ -4,9 +4,9 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Home } from "./pages/Home";
-import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import Footer from "./components/footer";
+import Profil from "./pages/Profil";
 import Talents from "./pages/Talents";
 
 const router = createBrowserRouter([
@@ -22,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/profil",
+        element: <Profil />,
       },
       {
         path: "/talents",
