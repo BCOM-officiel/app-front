@@ -1,0 +1,67 @@
+{
+  "data": [
+      {
+          "id": 2,
+          "attributes": {
+              "createdAt": "2024-03-13T13:57:54.144Z",
+              "updatedAt": "2024-03-13T14:55:00.033Z",
+              "publishedAt": "2024-03-13T14:18:59.040Z",
+              "about": "Etiam sagittis venenatis iaculis. Fusce sit amet massa ante. Donec est lorem, congue et sem vitae, posuere dignissim eros. Curabitur facilisis sollicitudin neque nec accumsan. Suspendisse aliquet velit ac molestie vehicula. Nullam vulputate odio quis sollicitudin vestibulum. Donec maximus, ex a condimentum feugiat, neque elit pretium tellus, id egestas metus enim eu orci. Aenean non iaculis orci. Nunc et nunc et nisl malesuada eleifend nec nec erat. Donec sodales, ligula quis aliquam rhoncus, enim tortor mollis ligula, in iaculis mi velit id metus. Ut laoreet dui semper dolor tincidunt, vel cursus libero consequat. Quisque quis nisi vitae lacus posuere mattis. Etiam non venenatis magna.\n\nNam et gravida diam. In aliquet lobortis augue sed vehicula. Praesent efficitur ex a enim facilisis condimentum. Donec in nibh ac ipsum congue hendrerit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc eu nunc ut mauris volutpat tincidunt. Praesent dictum odio in maximus tincidunt.\n\nMorbi bibendum maximus ligula, eget posuere augue lacinia ac. Nunc hendrerit mauris ut ullamcorper ultricies. Etiam maximus, lacus vel pharetra cursus, nulla dolor accumsan eros, sed malesuada ex lectus nec arcu. Suspendisse tortor ligula, lacinia vel lectus eu, maximus placerat sem. Vivamus commodo efficitur mauris. Vestibulum iaculis laoreet dui, nec tristique mauris ultricies eu. Nunc nec ornare leo.",
+              "card": {
+                  "id": 1,
+                  "firstname": "Lorem ",
+                  "lastname": "Curabitur ",
+                  "jobs": null
+              },
+              "headline": {
+                  "id": 1,
+                  "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lectus magna, venenatis non lacus suscipit, venenatis imperdiet nunc. Curabitur convallis eros dolor, eu tristique nulla facilisis ac. Sed sit amet felis at lacus finibus imperdiet.",
+                  "subtitle": null,
+                  "picture": {
+                      "data": {
+                          "id": 2,
+                          "attributes": {
+                              "name": "Capture d'écran 2024-02-24 220105.png",
+                              "alternativeText": null,
+                              "caption": null,
+                              "width": 248,
+                              "height": 266,
+                              "formats": {
+                                  "thumbnail": {
+                                      "name": "thumbnail_Capture d'écran 2024-02-24 220105.png",
+                                      "hash": "thumbnail_Capture_d_ecran_2024_02_24_220105_781db3fe60",
+                                      "ext": ".png",
+                                      "mime": "image/png",
+                                      "path": null,
+                                      "width": 145,
+                                      "height": 156,
+                                      "size": 47.52,
+                                      "url": "/uploads/thumbnail_Capture_d_ecran_2024_02_24_220105_781db3fe60.png"
+                                  }
+                              },
+                              "hash": "Capture_d_ecran_2024_02_24_220105_781db3fe60",
+                              "ext": ".png",
+                              "mime": "image/png",
+                              "size": 36.68,
+                              "url": "/uploads/Capture_d_ecran_2024_02_24_220105_781db3fe60.png",
+                              "previewUrl": null,
+                              "provider": "local",
+                              "provider_metadata": null,
+                              "createdAt": "2024-03-13T10:30:23.277Z",
+                              "updatedAt": "2024-03-13T13:56:23.528Z"
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  ],
+  "meta": {
+      "pagination": {
+          "page": 1,
+          "pageSize": 25,
+          "pageCount": 1,
+          "total": 1
+      }
+  }
+}
