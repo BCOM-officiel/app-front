@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import Footer from "./components/footer";
 import Profil from "./pages/Profil";
 import Talents from "./pages/Talents";
+import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         path: "/talents",
         element: <Talents />,
       },
+      {
+        path:"/contact",
+        element: <Contact />,
+      }
     ],
   },
 ]);
