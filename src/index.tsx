@@ -33,9 +33,13 @@ const router = createBrowserRouter([
         element: <Talents />,
       },
       {
-        path:"/contact",
+        path: "/talents/:id",
+        element: <Profil />,
+      },
+      {
+        path: "/contact",
         element: <Contact />,
-      }
+      },
     ],
   },
 ]);
