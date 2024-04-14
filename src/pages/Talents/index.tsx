@@ -12,7 +12,7 @@ export default function Talents() {
     <Box sx={{ marginBottom: "120px" }}>
       <Box sx={{ height: "800px", mb: 5, background: "gray" }} />
       <Container maxWidth="xl" sx={{ gap: 4 }}>
-        {talentList.map(({ attributes: { id, card, headline } }) => (
+        {talentList.map(({ id, attributes: { card, headline } }) => (
           <TalentCard
             key={id}
             id={id}

@@ -10,7 +10,7 @@ type Props = {
   picture: string;
 };
 
-export default function index({ id, name, job, picture }: Props) {
+export default function TalentCard({ id, name, job, picture }: Props) {
   return (
     <Box
       sx={{
