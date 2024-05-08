@@ -11,6 +11,7 @@ const Evenement = () => {
         color: "#fff",
         py: 5,
         px: "120px",
+        "@media(min-width: 900px)": { pl: "120px", pr: 0 },
       }}
     >
       <Typography
@@ -31,7 +32,7 @@ const Evenement = () => {
       >
         <Typography
           sx={{
-            flex: "1 0 50%",
+            flex: "1 1 40%",
             fontSize: "1.4rem",
           }}
         >
@@ -79,40 +80,38 @@ const Evenement = () => {
             </em>
           </p>
         </Typography>
-        <Box sx={{ display: "grid" }}>
+        <Box
+          sx={{
+            flex: "1 1 60%",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gridTemplateRows: "1fr min-content",
+            gap: 5,
+          }}
+        >
           <Box
+            component="img"
             sx={{
-              display: "flex",
-              gap: 5,
-              overflowX: "hidden",
+              "@media(min-width: 900px)": { display: "inline" },
+              display: "none",
+              objectFit: "cover",
+              height: "100%",
             }}
+            src={imgEvent1}
+          />
+          <Box
+            component="img"
+            sx={{
+              "@media(min-width: 900px)": { display: "inline" },
+              display: "none",
+              objectFit: "cover",
+              height: "100%",
+            }}
+            src={imgEvent2}
+          />
+          <CustomButton
+            sx={{ mr: "120px", justifySelf: "right", gridColumn: "1/-1" }}
           >
-            <Box
-              component="img"
-              sx={{
-                "@media(min-width: 900px)": { display: "inline" },
-                display: "none",
-                objectFit: "cover",
-                width: "600px",
-                aspectRatio: 1,
-                flexShrink: 0,
-              }}
-              src={imgEvent1}
-            />
-            <Box
-              component="img"
-              sx={{
-                "@media(min-width: 900px)": { display: "inline" },
-                display: "none",
-                objectFit: "cover",
-                width: "600px",
-                aspectRatio: 1,
-                flexShrink: 0,
-              }}
-              src={imgEvent2}
-            />
-          </Box>
-          <CustomButton sx={{ mt: "auto", ml: "auto" }}>
             En savoir +
           </CustomButton>
         </Box>
