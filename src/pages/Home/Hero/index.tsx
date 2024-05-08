@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <Box
       sx={{
-        background: `linear-gradient(to bottom, rgba(0,0,0,0.2), transparent 30%, #eee), url(${ImageHero}) no-repeat center right`,
+        background: `linear-gradient(to bottom, rgba(0,0,0,0.2), transparent 30%, #eee), url(${ImageHero}) no-repeat center right/auto 100%`,
         minHeight: "100vh",
         px: 5,
         pt: "140px",

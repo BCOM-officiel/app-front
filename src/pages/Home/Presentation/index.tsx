@@ -23,7 +23,7 @@ const Presentation = () => {
           component="img"
           src={teamBcom}
           alt="team become"
-          sx={{ maxWidth: "600px" }}
+          sx={{ width: "1000px" }}
         />
       </Box>
 
@@ -50,15 +50,28 @@ const Presentation = () => {
             fontSize: "1.2rem",
           }}
         >
-          Bienvenue sur B’COM, la vitrine digitale des talents où l’innovation
-          rencontre la créativité. Nous sommes déterminés à mettre en lumière
-          des profils exceptionnels à travers des vidéos et un contenu
-          dynamique. Notre plateforme offre une visibilité inégalée aux talents
-          méritants, propulsant leur carrière grâce à une communication 100%
-          digitale. Rejoignez-nous pour découvrir et soutenir ces créateurs
-          exceptionnels qui cherchent à émerger et à trouver leur public dans un
-          monde numérique en constante évolution. B’COM, l’avenir des talents
-          commence ici.
+          <p>
+            Bienvenue sur <strong>B'COM</strong>, la{" "}
+            <strong>
+              vitrine digitale des talents où l'innovation rencontre la
+              créativité
+            </strong>
+            . Nous sommes déterminés à
+            <strong>mettre en lumière des profils exceptionnels</strong> à
+            travers des vidéos et un contenu dynamique.
+          </p>
+          <p>
+            Notre plateforme offre une{" "}
+            <strong>visibilité inégalée aux talents méritants</strong>,
+            propulsant leur carrière grâce à une{" "}
+            <strong>communication 100% digitale</strong>. Rejoignez-nous pour
+            découvrir et <strong>soutenir ces créateurs exceptionnels</strong>{" "}
+            qui cherchent à émerger et à trouver leur public dans un monde
+            numérique en constante évolution.
+          </p>
+          <p>
+            <em>B'COM, l'avenir des talents commence ici.</em>
+          </p>
         </Typography>
       </Box>
 
