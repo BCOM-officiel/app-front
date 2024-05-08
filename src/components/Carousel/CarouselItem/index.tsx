@@ -37,18 +37,20 @@ const CarouselItem = ({
           objectPosition: "center center",
         }}
       />
-      <Typography component="span" fontWeight="700" sx={{ ...textSx }}>
-        {talentName}{" "}
-      </Typography>
-      <Typography component="span" fontWeight="600">
-        <Link
-          component={RouterLink}
-          to={`/talents/${talentId}`}
-          sx={{ ...textSx }}
-        >
-          {talentProfession}
-        </Link>
-      </Typography>
+      <Box>
+        <Typography component="span" fontWeight="700" sx={{ ...textSx }}>
+          {talentName}{" "}
+        </Typography>
+        <Typography component="span" fontWeight="600">
+          <Link
+            component={RouterLink}
+            to={`/talents/${talentId}`}
+            sx={{ ...textSx }}
+          >
+            {talentProfession}
+          </Link>
+        </Typography>
+      </Box>
     </Box>
   );
 };
