@@ -1,15 +1,19 @@
-import React from "react";
 import Hero from "./Hero";
 import { Box, Typography } from "@mui/material";
 import CustomButton from "../../components/button";
 import Carousel from "../../components/Carousel/index";
 import CarouselItem from "../../components/Carousel/CarouselItem";
-import picture from "../../assets/pexels-karolina-grabowska-4471894.jpg";
 import TeamMember from "./TeamMember";
 import Presentation from "./Presentation";
 import Evenement from "./Evenement";
+import useApi from "../../hooks/useApi";
+import { Profile } from "../../types/profile";
 
 export const Home = () => {
+  const { data, isLoading, error } = useApi<Profile[]>(
+    `profiles?populate[0]=card.places&populate[1]=headline&populate[2]=socials&populate[3]=skills&populate[4]=portfolio&populate[5]=headline.picture`
+  );
+
   return (
     <Box
       sx={{
@@ -18,103 +22,66 @@ export const Home = () => {
     >
       <Hero />
       <Presentation />
-      <Carousel
+      <Box
         sx={{
-          mb: "128px",
+          mx: "120px",
         }}
       >
-        <CarouselItem
-          talentId={2}
-          talentName="Laura Dupont"
-          talentProfession="Artiste Graphiste Webdesigner"
-          src={picture}
-          alt="someone"
-        ></CarouselItem>
-        <CarouselItem
-          talentId={2}
-          talentName="Laura Dupont"
-          talentProfession="Artiste Graphiste Webdesigner"
-          src={picture}
-          alt="someone"
-        ></CarouselItem>
-        <CarouselItem
-          talentId={2}
-          talentName="Laura Dupont"
-          talentProfession="Artiste Graphiste Webdesigner"
-          src={picture}
-          alt="someone"
-        ></CarouselItem>
-        <CarouselItem
-          talentId={2}
-          talentName="Laura Dupont"
-          talentProfession="Artiste Graphiste Webdesigner"
-          src={picture}
-          alt="someone"
-        ></CarouselItem>
-        <CarouselItem
-          talentId={2}
-          talentName="Laura Dupont"
-          talentProfession="Artiste Graphiste Webdesigner"
-          src={picture}
-          alt="someone"
-        ></CarouselItem>
-        <CarouselItem
-          talentId={2}
-          talentName="Laura Dupont"
-          talentProfession="Artiste Graphiste Webdesigner"
-          src={picture}
-          alt="someone"
-        ></CarouselItem>
-        <CarouselItem
-          talentId={2}
-          talentName="Laura Dupont"
-          talentProfession="Artiste Graphiste Webdesigner"
-          src={picture}
-          alt="someone"
-        ></CarouselItem>
-        <CarouselItem
-          talentId={2}
-          talentName="Laura Dupont"
-          talentProfession="Artiste Graphiste Webdesigner"
-          src={picture}
-          alt="someone"
-        ></CarouselItem>
-        <CarouselItem
-          talentId={2}
-          talentName="Laura Dupont"
-          talentProfession="Artiste Graphiste Webdesigner"
-          src={picture}
-          alt="someone"
-        ></CarouselItem>
-        <CarouselItem
-          talentId={2}
-          talentName="Laura Dupont"
-          talentProfession="Artiste Graphiste Webdesigner"
-          src={picture}
-          alt="someone"
-        ></CarouselItem>
-        <CarouselItem
-          talentId={2}
-          talentName="Laura Dupont"
-          talentProfession="Artiste Graphiste Webdesigner"
-          src={picture}
-          alt="someone"
-        ></CarouselItem>
-        <CarouselItem
-          talentId={2}
-          talentName="Laura Dupont"
-          talentProfession="Artiste Graphiste Webdesigner"
-          src={picture}
-          alt="someone"
-        ></CarouselItem>
-        <CarouselItem
-          talentId={2}
-          talentName="Laura Dupont"
-          talentProfession="Artiste Graphiste Webdesigner"
-          src={picture}
-          alt="someone"
-        ></CarouselItem>
-      </Carousel>
+        <Typography
+          sx={{
+            fontFamily: "'PT Sans Narrow', sans-serif",
+            fontSize: "48px",
+            my: 2,
+          }}
+        >
+          Nos Talents
+        </Typography>
+        {isLoading ? (
+          <Typography>Veuillez patienter...</Typography>
+        ) : error ? (
+          <Typography>Une erreur s'est produite.</Typography>
+        ) : (
+          <Carousel
+            sx={{
+              mb: "128px",
+            }}
+          >
+            {data &&
+              data.map(({ id, attributes: { card, headline } }) => (
+                <CarouselItem
+                  key={id}
+                  talentId={id}
+                  talentName={`${card.firstname} ${card.lastname}`}
+                  talentProfession={card.jobs ? card.jobs : "Looking for job"}
+                  src={`${process.env.REACT_APP_DOCUMENTS_URI}${headline.picture.data.attributes.url}`}
+                  alt={`Photo de ${card.firstname} ${card.lastname}`}
+                />
+              ))}
+            {data &&
+              data.map(({ id, attributes: { card, headline } }) => (
+                <CarouselItem
+                  key={id}
+                  talentId={id}
+                  talentName={`${card.firstname} ${card.lastname}`}
+                  talentProfession={card.jobs ? card.jobs : "Looking for job"}
+                  src={`${process.env.REACT_APP_DOCUMENTS_URI}${headline.picture.data.attributes.url}`}
+                  alt={`Photo de ${card.firstname} ${card.lastname}`}
+                />
+              ))}
+            {data &&
+              data.map(({ id, attributes: { card, headline } }) => (
+                <CarouselItem
+                  key={id}
+                  talentId={id}
+                  talentName={`${card.firstname} ${card.lastname}`}
+                  talentProfession={card.jobs ? card.jobs : "Looking for job"}
+                  src={`${process.env.REACT_APP_DOCUMENTS_URI}${headline.picture.data.attributes.url}`}
+                  alt={`Photo de ${card.firstname} ${card.lastname}`}
+                />
+              ))}
+          </Carousel>
+        )}
+      </Box>
       <Evenement />
       <Box
         sx={{

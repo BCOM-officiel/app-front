@@ -3,7 +3,7 @@ import { motion, useMotionValue } from "framer-motion";
 import React from "react";
 
 type Props = {
-  children: React.ReactNode | React.ReactNode[];
+  children?: React.ReactNode | React.ReactNode[];
   sx?: SxProps;
   boxProps?: BoxProps;
 };
@@ -16,7 +16,7 @@ export default function Carousel({ children, sx, ...boxProps }: Props) {
     ? children
     : [children];
 
-  const [index, setIndex] = React.useState(5);
+  const [index, setIndex] = React.useState(Math.floor(slides.length / 2));
 
   const dragX = useMotionValue(0);
 
@@ -29,8 +29,6 @@ export default function Carousel({ children, sx, ...boxProps }: Props) {
       setIndex((pv) => pv - 1);
     }
   };
-
-  console.log(window.screen.width / 2 - DRAG_WIDTH / 2 + -DRAG_WIDTH * index);
 
   return (
     <Box

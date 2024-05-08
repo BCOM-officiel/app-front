@@ -1,5 +1,5 @@
-import React from 'react';
-import { Card, CardContent, Typography, Avatar, CardMedia } from '@mui/material';
+import React from "react";
+import { Typography, Box, SxProps } from "@mui/material";
 
 type ProfileCardProps = {
   firstName: string;
@@ -7,28 +7,50 @@ type ProfileCardProps = {
   imageUrl: string;
   color: string;
   textColor: string;
+  sxImg?: SxProps;
 };
 
-const TeamMemberCard: React.FC<ProfileCardProps> = ({ firstName, profession, imageUrl, color, textColor }) => {
+const TeamMemberCard: React.FC<ProfileCardProps> = ({
+  firstName,
+  profession,
+  imageUrl,
+  color,
+  textColor,
+  sxImg = {},
+}) => {
   return (
-    <Card sx={{ width: 350, maxWidth: 400, backgroundColor: color, borderRadius:'0' }}>
-     
-      <CardContent sx={{ textAlign: 'center'}}>
-        <Typography gutterBottom variant="h5" component="div" sx={{marginTop: 10 , color:`${textColor}`}}>
+    <Box sx={{ backgroundColor: color, borderRadius: "0", width: "100%" }}>
+      <Box sx={{ textAlign: "center", mb: 10 }}>
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="div"
+          sx={{ marginTop: 10, color: `${textColor}` }}
+        >
           {firstName}
         </Typography>
-        <Typography variant="body2" color="text.secondary" sx={{color: `${textColor}`, textDecoration: "underline"}}>
+        <Typography
+          variant="body2"
+          color="text.secondary"
+          sx={{ color: `${textColor}`, textDecoration: "underline" }}
+        >
           {profession}
         </Typography>
-      </CardContent>
-      <CardMedia
+      </Box>
+      <Box
         component="img"
-        height="600"
-        image={imageUrl}
+        src={imageUrl}
         alt={`${firstName}`}
-        sx={{marginTop: 12}}
+        sx={{
+          height: "600px",
+          width: "100%",
+          objectFit: "contain",
+          objectPosition: "bottom",
+          display: "block",
+          ...sxImg,
+        }}
       />
-    </Card>
+    </Box>
   );
 };
 

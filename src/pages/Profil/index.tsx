@@ -27,9 +27,9 @@ const Profil = () => {
       }}
     >
       {isLoading ? (
-        <Typography>"Veuillez patienter..."</Typography>
+        <Typography>Veuillez patienter...</Typography>
       ) : error ? (
-        <Typography>"Une erreur s'est produite."</Typography>
+        <Typography>Une erreur s'est produite.</Typography>
       ) : (
         data && (
           <>
