@@ -134,22 +134,18 @@ export const Home = () => {
             my: 2,
           }}
         >
-          Rencontrez nos experts en stratégie Marketing et communication !
+          Rencontrez notre équipe !
         </Typography>
         <Typography
           sx={{
             fontSize: "1.2rem",
           }}
         >
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque
-          reprehenderit voluptate illo ex sed necessitatibus, laboriosam
-          dignissimos, beatae dolorem incidunt maxime recusandae facere quo
-          temporibus dolore pariatur ullam esse quia quis error magni tempore
-          ab? Voluptates et asperiores amet quo laudantium repudiandae
-          aspernatur hic perferendis illum? Quo, sequi magni voluptatem in
-          ducimus amet. Porro, pariatur. Maiores, sit possimus, quam molestiae
-          cupiditate eum similique dicta nisi quo assumenda quibusdam delectus
-          id, vel ratione tempore vitae.
+          Plongez dans l'épique et découvrez le talent à l'état pur ! Notre
+          équipe de jeunes motivés, composée de 10 membres passionnés, se divise
+          en trois pôles essentiels : le Pôle Marketing/Communication, le Pôle
+          Informatique, et le Pôle Création Design. Rejoigneznous dès maintenant
+          pour explorer l'univers captivant de B'COM.
         </Typography>
         <CustomButton
           sx={{
