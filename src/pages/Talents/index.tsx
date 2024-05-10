@@ -11,7 +11,10 @@ export default function Talents() {
   return (
     <Box sx={{ marginBottom: "120px" }}>
       <Box sx={{ height: "800px", mb: 5, background: "gray" }} />
-      <Container maxWidth="xl" sx={{ gap: 4, minHeight: "50vh" }}>
+      <Container
+        maxWidth="xl"
+        sx={{ gap: 4, minHeight: "50vh", display: "flex", flexWrap: "wrap" }}
+      >
         {isLoading ? (
           <Typography>Veuillez patienter...</Typography>
         ) : error ? (
