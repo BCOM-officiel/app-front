@@ -12,30 +12,31 @@ const TeamMember = () => {
       sx={{
         display: "flex",
         width: "100%",
-        // overflowX: "scroll",
-        // " > *": {
-        //   minWidth: "20%",
-        // },
-        // // scrollbar by @devstreak : https://codepen.io/devstreak
-        // "&::-webkit-scrollbar-track": {
-        //   WebkitBoxShadow: "inset 0 0 6px rgba(0,0,0,0.3)",
-        //   backgroundColor: "#F5F5F5",
-        // },
-        // "&::-webkit-scrollbar": {
-        //   width: "10px",
-        //   backgroundColor: "#F5F5F5",
-        // },
-        // "&::-webkit-scrollbar-thumb": {
-        //   backgroundColor: "#F90",
-        //   backgroundImage: `-webkit-linear-gradient(45deg,
-        // 																					rgba(255, 255, 255, .2) 25%,
-        // 																					transparent 25%,
-        // 																					transparent 50%,
-        // 																					rgba(255, 255, 255, .2) 50%,
-        // 																					rgba(255, 255, 255, .2) 75%,
-        // 																					transparent 75%,
-        // 																					transparent)`,
-        // },
+        overflowX: "scroll",
+        " > *": {
+          width: "20%",
+          minWidth: "300px",
+        },
+        // scrollbar by @devstreak : https://codepen.io/devstreak
+        "&::-webkit-scrollbar-track": {
+          WebkitBoxShadow: "inset 0 0 6px rgba(0,0,0,0.3)",
+          backgroundColor: "#F5F5F5",
+        },
+        "&::-webkit-scrollbar": {
+          width: "10px",
+          backgroundColor: "#F5F5F5",
+        },
+        "&::-webkit-scrollbar-thumb": {
+          backgroundColor: "#F90",
+          backgroundImage: `-webkit-linear-gradient(45deg,
+        																					rgba(255, 255, 255, .2) 25%,
+        																					transparent 25%,
+        																					transparent 50%,
+        																					rgba(255, 255, 255, .2) 50%,
+        																					rgba(255, 255, 255, .2) 75%,
+        																					transparent 75%,
+        																					transparent)`,
+        },
       }}
     >
       <TeamMemberCard

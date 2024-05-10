@@ -43,29 +43,7 @@ export const Home = () => {
                 talentId={id}
                 talentName={`${card.firstname} ${card.lastname}`}
                 talentProfession={card.jobs ? card.jobs : "Looking for job"}
-                src={`${process.env.REACT_APP_DOCUMENTS_URI}${headline.picture.data.attributes.url}`}
-                alt={`Photo de ${card.firstname} ${card.lastname}`}
-              />
-            ))}
-          {data &&
-            data.map(({ id, attributes: { card, headline } }) => (
-              <CarouselItem
-                key={id}
-                talentId={id}
-                talentName={`${card.firstname} ${card.lastname}`}
-                talentProfession={card.jobs ? card.jobs : "Looking for job"}
-                src={`${process.env.REACT_APP_DOCUMENTS_URI}${headline.picture.data.attributes.url}`}
-                alt={`Photo de ${card.firstname} ${card.lastname}`}
-              />
-            ))}
-          {data &&
-            data.map(({ id, attributes: { card, headline } }) => (
-              <CarouselItem
-                key={id}
-                talentId={id}
-                talentName={`${card.firstname} ${card.lastname}`}
-                talentProfession={card.jobs ? card.jobs : "Looking for job"}
-                src={`${process.env.REACT_APP_DOCUMENTS_URI}${headline.picture.data.attributes.url}`}
+                src={`${process.env.REACT_APP_DOCUMENTS_URI}${headline.picture.data?.attributes?.url}`}
                 alt={`Photo de ${card.firstname} ${card.lastname}`}
               />
             ))}
@@ -110,13 +88,7 @@ export const Home = () => {
         </Typography>
       </Container>
       <Evenement />
-      <Box
-        sx={{
-          my: "120px",
-          px: "120px",
-          maxWidth: "996px",
-        }}
-      >
+      <Container maxWidth="lg" sx={{ my: "120px" }}>
         <Typography
           component="h2"
           sx={{
@@ -154,7 +126,7 @@ export const Home = () => {
         >
           En savoir +
         </CustomButton>
-      </Box>
+      </Container>
 
       <TeamMember />
     </Box>

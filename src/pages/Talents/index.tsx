@@ -24,7 +24,7 @@ export default function Talents() {
               id={id}
               name={`${card.firstname} ${card.lastname}`}
               job={card.jobs ? card.jobs : "Looking for job"}
-              picture={`${process.env.REACT_APP_DOCUMENTS_URI}${headline.picture.data.attributes.url}`}
+              picture={`${process.env.REACT_APP_DOCUMENTS_URI}${headline.picture.data?.attributes?.url}`}
             />
           ))
         )}

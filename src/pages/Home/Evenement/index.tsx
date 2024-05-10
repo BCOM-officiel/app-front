@@ -10,7 +10,7 @@ const Evenement = () => {
         backgroundColor: "#164462",
         color: "#fff",
         py: 5,
-        px: "120px",
+        px: 2,
         "@media(min-width: 900px)": { pl: "120px", pr: 0 },
       }}
     >
@@ -26,7 +26,7 @@ const Evenement = () => {
       </Typography>
       <Box
         sx={{
-          display: "flex",
+          "@media(min-width: 900px)": { display: "flex" },
           gap: 5,
         }}
       >
@@ -110,7 +110,12 @@ const Evenement = () => {
             src={imgEvent2}
           />
           <CustomButton
-            sx={{ mr: "120px", justifySelf: "right", gridColumn: "1/-1" }}
+            sx={{
+              justifySelf: "right",
+              alignSelf: "end",
+              gridColumn: "1/-1",
+              "@media(min-width: 900px)": { mr: "120px" },
+            }}
           >
             En savoir +
           </CustomButton>
