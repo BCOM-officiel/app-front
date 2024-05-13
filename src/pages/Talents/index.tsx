@@ -18,7 +18,7 @@ export default function Talents() {
         sx={{
           height: "800px",
           mb: 5,
-          background: `linear-gradient(to bottom, rgba(0,0,0,0.2), transparent 30%, #fff), url(${imgHeader}) center / cover`,
+          background: `linear-gradient(to top, rgba(0,0,0,0.2), transparent 30%, #000), url(${imgHeader}) center / cover`,
         }}
       />
       <Container

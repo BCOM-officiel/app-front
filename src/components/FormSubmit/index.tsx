@@ -11,8 +11,8 @@ const FormSubmit = ({ children }: FormSubmitProps) => {
       type="submit"
       sx={{
         textTransform: "none",
-        color: "black",
-        backgroundColor: "white",
+        color: "#fff",
+        backgroundColor: "#eda44d",
         px: 6,
         borderRadius: 90,
         boxShadow: "none",

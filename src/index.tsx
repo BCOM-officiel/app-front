@@ -2,19 +2,23 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Outlet, Route, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Home } from "./pages/Home";
-import Header from "./components/Header";
+
 import Footer from "./components/footer";
 import Profil from "./pages/Profil";
 import Talents from "./pages/Talents";
 import Contact from "./pages/Contact";
+import Team from "./pages/Team";
+
+import Header from "./components/Header";
 
 const router = createBrowserRouter([
   {
     element: (
       <>
-        <Header />
+       <Header/>
+      
         <Outlet />
         <Footer pages={[]} />
       </>
@@ -33,9 +37,14 @@ const router = createBrowserRouter([
         element: <Profil />,
       },
       {
+        path:"/team",
+        element: <Team />,
+      },
+      {
         path: "/contact",
         element: <Contact />,
       },
+
     ],
   },
 ]);
