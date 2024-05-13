@@ -45,7 +45,7 @@ const CarouselItem = ({
           <Link
             component={RouterLink}
             to={`/talents/${talentId}`}
-            sx={{ ...textSx }}
+            sx={{ ...textSx, zIndex: "99999", pointerEvents: "auto" }}
           >
             {talentProfession}
           </Link>

@@ -62,7 +62,7 @@ export default function Carousel({ children, sx, ...boxProps }: Props) {
               flexShrink: 0,
               flexBasis: DRAG_WIDTH,
               "& > *": {
-                // pointerEvents: "none",
+                pointerEvents: "none",
                 scale: `${1 - Math.abs(index - i) / 5}`,
                 transition: "scale 100ms ease-in-out",
                 mx: 1,

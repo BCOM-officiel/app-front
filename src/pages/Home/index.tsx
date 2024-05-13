@@ -40,11 +40,7 @@ export const Home = () => {
         >
           {data &&
             data.map(({ id, attributes: { card, headline } }) => (
-              <Box
-                key={id}
-                sx={{ cursor: "pointer" }}
-                onClick={() => navigate(`/talents/${id}`)}
-              >
+              <Box key={id} sx={{}}>
                 <CarouselItem
                   talentId={id}
                   talentName={`${card.firstname} ${card.lastname}`}
