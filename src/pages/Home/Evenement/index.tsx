@@ -35,6 +35,7 @@ const Evenement = () => {
             flex: "1 1 40%",
             fontSize: "1.4rem",
           }}
+          component="div"
         >
           <p>
             Nous sommes ravis de vous annoncer notre{" "}

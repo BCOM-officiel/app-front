@@ -8,8 +8,10 @@ import Presentation from "./Presentation";
 import Evenement from "./Evenement";
 import useApi from "../../hooks/useApi";
 import { Profile } from "../../types/profile";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
+  const navigate = useNavigate();
   const { data, isLoading, error } = useApi<Profile[]>(
     `profiles?populate[0]=card.places&populate[1]=headline&populate[2]=socials&populate[3]=skills&populate[4]=portfolio&populate[5]=headline.picture`
   );
@@ -38,14 +40,19 @@ export const Home = () => {
         >
           {data &&
             data.map(({ id, attributes: { card, headline } }) => (
-              <CarouselItem
+              <Box
                 key={id}
-                talentId={id}
-                talentName={`${card.firstname} ${card.lastname}`}
-                talentProfession={card.jobs ? card.jobs : "Looking for job"}
-                src={`${process.env.REACT_APP_DOCUMENTS_URI}${headline.picture.data?.attributes?.url}`}
-                alt={`Photo de ${card.firstname} ${card.lastname}`}
-              />
+                sx={{ cursor: "pointer" }}
+                onClick={() => navigate(`/talents/${id}`)}
+              >
+                <CarouselItem
+                  talentId={id}
+                  talentName={`${card.firstname} ${card.lastname}`}
+                  talentProfession={card.jobs ? card.jobs : "Looking for job"}
+                  src={`${process.env.REACT_APP_DOCUMENTS_URI}${headline.picture.data?.attributes?.url}`}
+                  alt={`Photo de ${card.firstname} ${card.lastname}`}
+                />
+              </Box>
             ))}
         </Carousel>
       )}
@@ -62,6 +69,7 @@ export const Home = () => {
           Concept
         </Typography>
         <Typography
+          component="div"
           sx={{
             fontSize: "1.2rem",
           }}
@@ -112,6 +120,7 @@ export const Home = () => {
           sx={{
             fontSize: "1.2rem",
           }}
+          component="div"
         >
           Plongez dans l'épique et découvrez le talent à l'état pur ! Notre
           équipe de jeunes motivés, composée de 10 membres passionnés, se divise

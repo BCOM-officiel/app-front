@@ -15,12 +15,12 @@ const Profil = () => {
 
   const skills = data?.attributes.skills.map((skill) => skill.name);
   const places = data?.attributes.card.places.map((place) => place.name);
-  const portfolioImages = data?.attributes.portfolio.map(
-    (item) => item.image.data.attributes.url
+  const portfolioImages = data?.attributes?.portfolio.map(
+    (item) => item.image?.data?.attributes.url
   );
 
   return (
-    <Container sx={{ pt: "160px", mb: "140px" }}>
+    <Container sx={{ pt: "160px", mb: "140px" }} maxWidth="xl">
       {isLoading ? (
         <Typography>"Veuillez patienter..."</Typography>
       ) : error ? (
@@ -48,7 +48,10 @@ const Profil = () => {
                   {data.attributes.headline.subtitle}
                 </Typography>
               </Box>
-              <Box maxWidth="50%" margin={{ xs: "auto" }}>
+              <Box
+                margin={{ xs: "auto" }}
+                sx={{ "@media(min-width: 900px)": { maxWidth: "50%" } }}
+              >
                 <img
                   src={imgUrl(
                     data.attributes.headline.picture.data?.attributes?.url
@@ -102,19 +105,22 @@ const Profil = () => {
                     <Typography variant="body1">
                       {data.attributes.card.jobs}
                     </Typography>
-                    <Typography
-                      component="span"
-                      sx={{
-                        backgroundColor: "#164462",
-                        borderRadius: 4,
-                        color: "white",
-                        padding: "3px 8px",
-                        fontSize: 12,
-                        fontWeight: 600,
-                      }}
-                    >
-                      {places}
-                    </Typography>
+                    {places?.map((place) => (
+                      <Typography
+                        component="span"
+                        sx={{
+                          backgroundColor: "#164462",
+                          borderRadius: 4,
+                          color: "white",
+                          padding: "3px 8px",
+                          fontSize: 12,
+                          fontWeight: 600,
+                          mr: 1,
+                        }}
+                      >
+                        {place}
+                      </Typography>
+                    ))}
                   </Box>
                 </Box>
                 {skills?.map((skill, index) => (

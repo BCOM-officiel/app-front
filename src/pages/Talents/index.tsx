@@ -2,6 +2,7 @@ import { Box, Container, Typography } from "@mui/material";
 import TalentCard from "../../components/TalentCard";
 import useApi from "../../hooks/useApi";
 import { Profile } from "../../types/profile";
+import imgHeader from "../../assets/art.jpg";
 
 export default function Talents() {
   const { data, isLoading, error } = useApi<Profile[]>(
@@ -10,7 +11,13 @@ export default function Talents() {
 
   return (
     <Box sx={{ marginBottom: "120px" }}>
-      <Box sx={{ height: "800px", mb: 5, background: "gray" }} />
+      <Box
+        sx={{
+          height: "800px",
+          mb: 5,
+          background: `linear-gradient(to bottom, rgba(0,0,0,0.2), transparent 30%, #fff), url(${imgHeader}) center / cover`,
+        }}
+      />
       <Container
         maxWidth="xl"
         sx={{ gap: 4, minHeight: "50vh", display: "flex", flexWrap: "wrap" }}

@@ -46,6 +46,7 @@ const Presentation = () => {
           Salut ! Nous c'est B'COM
         </Typography>
         <Typography
+          component="div"
           sx={{
             fontSize: "1.2rem",
           }}

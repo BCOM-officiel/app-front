@@ -1,4 +1,12 @@
-import { Grid, Typography, Link, Box, TextField, Button } from "@mui/material";
+import {
+  Grid,
+  Typography,
+  Link,
+  Box,
+  TextField,
+  Button,
+  Container,
+} from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 type Page = {
@@ -35,220 +43,217 @@ const TikTokIcon = ({ color = "#000000" }) => {
 export default function Footer({ pages }: PageProps) {
   return (
     <Box
-      component="footer"
       sx={{
         backgroundColor: "#1a4362",
-        paddingTop: 10,
-        paddingLeft: 15,
-        paddingRight: 15,
-        paddingBottom: 10,
       }}
     >
-      <Grid
-        container
-        spacing={4}
-        alignItems={"flex-start"}
-        //sx={{ maxWidth: "80%", marginLeft: "auto", marginRight: "auto" }}
-      >
-        <Grid item xs={12} sm={3}>
-          <Typography
-            variant="h5"
-            mb={3}
-            align="left"
-            fontWeight={"bold"}
-            color="white"
-            gutterBottom
-          >
-            B'Com
-          </Typography>
-          <Typography
-            color="white"
-            align="left"
-            fontSize={15}
-            sx={{ maxWidth: "320px" }}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
-            risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
-            nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
-            ligula
-          </Typography>
-        </Grid>
-        <Grid item xs={12} sm={3} alignContent={"center"}>
-          <Typography
-            variant="h5"
-            mb={3}
-            color="white"
-            gutterBottom
-            align="left"
-            fontWeight={"bold"}
-          >
-            Pages
-          </Typography>
-          {pages.map((page) => (
-            <Link
-              key={page.title}
-              href={page.url}
+      <Container maxWidth="xl" component="footer" sx={{ py: 5 }}>
+        <Grid
+          container
+          spacing={4}
+          alignItems={"flex-start"}
+          //sx={{ maxWidth: "80%", marginLeft: "auto", marginRight: "auto" }}
+        >
+          <Grid item xs={12} sm={3}>
+            <Typography
+              variant="h5"
+              mb={3}
+              align="left"
+              fontWeight={"bold"}
+              color="white"
+              gutterBottom
+            >
+              B'Com
+            </Typography>
+            <Typography
+              color="white"
+              align="left"
+              fontSize={15}
+              sx={{ maxWidth: "320px" }}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
+              risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
+              nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
+              ligula
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={3} alignContent={"center"}>
+            <Typography
+              variant="h5"
+              mb={3}
+              color="white"
+              gutterBottom
+              align="left"
+              fontWeight={"bold"}
+            >
+              Pages
+            </Typography>
+            {pages.map((page) => (
+              <Link
+                key={page.title}
+                href={page.url}
+                align="left"
+                mt={1}
+                fontSize={15}
+                sx={{
+                  textDecoration: "none",
+                  color: "#848482",
+                  display: "block",
+                  marginBottom: 1,
+                  fontSize: 15,
+                  transition: "color 0.3s",
+                  "&:hover": {
+                    color: "white",
+                  },
+                }}
+              >
+                {page.title}
+              </Link>
+            ))}
+          </Grid>
+
+          <Grid item xs={12} sm={3} alignContent={"center"}>
+            <Typography
+              variant="h5"
+              mb={3}
+              color="white"
+              fontWeight={"bold"}
+              align="left"
+              gutterBottom
+            >
+              Contact
+            </Typography>
+            <Typography
+              variant="subtitle1"
               align="left"
               mt={1}
               fontSize={15}
-              sx={{
-                textDecoration: "none",
-                color: "#848482",
-                display: "block",
-                marginBottom: 1,
-                fontSize: 15,
-                transition: "color 0.3s",
-                "&:hover": {
-                  color: "white",
-                },
-              }}
+              color="#848482"
             >
-              {page.title}
-            </Link>
-          ))}
+              Adresse postale
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              align="left"
+              mt={1}
+              fontSize={15}
+              color="#848482"
+            >
+              Email
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              align="left"
+              mt={1}
+              fontSize={15}
+              color="#848482"
+            >
+              Téléphone
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={3}>
+            <Typography
+              variant="h5"
+              mb={3}
+              color="white"
+              gutterBottom
+              align="left"
+              fontWeight={"bold"}
+            >
+              Réseaux sociaux
+            </Typography>
+            <Typography fontSize={15} color="white" mt={2} align="left">
+              Retrouvez-nous sur nos réseaux sociaux
+            </Typography>
+            <Box mt={2} sx={{ display: "flex", justifyContent: "flex-start" }}>
+              <Link href="#" sx={{ marginRight: 2 }}>
+                <InstagramIcon
+                  sx={{
+                    marginRight: 1,
+                    color: "white",
+                    fontSize: "50px",
+                    transition: "0.5s",
+                    "&:hover": { transform: "scale(1.5)" },
+                  }}
+                />
+              </Link>
+              <Link href="#" sx={{ marginRight: 2 }}>
+                <TikTokIcon color="white" />
+              </Link>
+            </Box>
+          </Grid>
         </Grid>
-
-        <Grid item xs={12} sm={3} alignContent={"center"}>
-          <Typography
-            variant="h5"
-            mb={3}
-            color="white"
-            fontWeight={"bold"}
-            align="left"
-            gutterBottom
+        <Grid container spacing={3} mt={6}>
+          <Grid
+            item
+            sm={6}
+            container
+            justifyContent="center"
+            alignItems="center"
+            sx={{ height: "100%" }}
           >
-            Contact
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="left"
-            mt={1}
-            fontSize={15}
-            color="#848482"
+            <Typography variant="caption" color="white">
+              ©2023 JLGRAPHISTES - TOUS DROITS RÉSERVÉS
+            </Typography>
+          </Grid>
+          <Grid
+            item
+            sm={6}
+            container
+            justifyContent="center"
+            alignItems="center"
+            sx={{ height: "100%" }}
           >
-            Adresse postale
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="left"
-            mt={1}
-            fontSize={15}
-            color="#848482"
-          >
-            Email
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="left"
-            mt={1}
-            fontSize={15}
-            color="#848482"
-          >
-            Téléphone
-          </Typography>
-        </Grid>
-        <Grid item xs={12} sm={3}>
-          <Typography
-            variant="h5"
-            mb={3}
-            color="white"
-            gutterBottom
-            align="left"
-            fontWeight={"bold"}
-          >
-            Réseaux sociaux
-          </Typography>
-          <Typography fontSize={15} color="white" mt={2} align="left">
-            Retrouvez-nous sur nos réseaux sociaux
-          </Typography>
-          <Box mt={2} sx={{ display: "flex", justifyContent: "flex-start" }}>
-            <Link href="#" sx={{ marginRight: 2 }}>
-              <InstagramIcon
+            <Typography variant="caption" color="white">
+              <Link
+                href="#"
+                fontSize={15}
                 sx={{
-                  marginRight: 1,
+                  marginRight: 2,
+                  textDecoration: "none",
                   color: "white",
-                  fontSize: "50px",
-                  transition: "0.5s",
-                  "&:hover": { transform: "scale(1.5)" },
+                  transition: "color 0.3s",
+                  "&:hover": {
+                    textDecoration: "underline",
+                  },
                 }}
-              />
-            </Link>
-            <Link href="#" sx={{ marginRight: 2 }}>
-              <TikTokIcon color="white" />
-            </Link>
-          </Box>
+              >
+                Mentions légales
+              </Link>
+              <Link
+                href="#"
+                fontSize={15}
+                sx={{
+                  marginRight: 2,
+                  textDecoration: "none",
+                  color: "white",
+                  transition: "color 0.3s",
+                  "&:hover": {
+                    textDecoration: "underline",
+                  },
+                }}
+              >
+                Politique de confidentialité
+              </Link>
+              <Link
+                href="#"
+                fontSize={15}
+                sx={{
+                  marginRight: 2,
+                  textDecoration: "none",
+                  color: "white",
+                  transition: "color 0.3s",
+                  "&:hover": {
+                    textDecoration: "underline",
+                  },
+                }}
+              >
+                Cookies
+              </Link>
+            </Typography>
+          </Grid>
         </Grid>
-      </Grid>
-      <Grid container spacing={3} mt={6}>
-        <Grid
-          item
-          sm={6}
-          container
-          justifyContent="center"
-          alignItems="center"
-          sx={{ height: "100%" }}
-        >
-          <Typography variant="caption" color="white">
-            ©2023 JLGRAPHISTES - TOUS DROITS RÉSERVÉS
-          </Typography>
-        </Grid>
-        <Grid
-          item
-          sm={6}
-          container
-          justifyContent="center"
-          alignItems="center"
-          sx={{ height: "100%" }}
-        >
-          <Typography variant="caption" color="white">
-            <Link
-              href="#"
-              fontSize={15}
-              sx={{
-                marginRight: 2,
-                textDecoration: "none",
-                color: "white",
-                transition: "color 0.3s",
-                "&:hover": {
-                  textDecoration: "underline",
-                },
-              }}
-            >
-              Mentions légales
-            </Link>
-            <Link
-              href="#"
-              fontSize={15}
-              sx={{
-                marginRight: 2,
-                textDecoration: "none",
-                color: "white",
-                transition: "color 0.3s",
-                "&:hover": {
-                  textDecoration: "underline",
-                },
-              }}
-            >
-              Politique de confidentialité
-            </Link>
-            <Link
-              href="#"
-              fontSize={15}
-              sx={{
-                marginRight: 2,
-                textDecoration: "none",
-                color: "white",
-                transition: "color 0.3s",
-                "&:hover": {
-                  textDecoration: "underline",
-                },
-              }}
-            >
-              Cookies
-            </Link>
-          </Typography>
-        </Grid>
-      </Grid>
+      </Container>
     </Box>
   );
 }

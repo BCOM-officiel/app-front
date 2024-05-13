@@ -43,6 +43,11 @@ const Header = () => {
     </>
   );
 
+  const goTo = (to: string) => {
+    navigate(to);
+    handleDrawerClose();
+  };
+
   const LinksLeft = (
     <>
       <Button
@@ -95,10 +100,10 @@ const Header = () => {
 
   const LinksMobile = (
     <>
-      <ListItem onClick={() => navigate("/")}>
+      <ListItem onClick={() => goTo("/")}>
         <ListItemText primary="Home" />
       </ListItem>
-      <ListItem onClick={() => navigate("talents")}>
+      <ListItem onClick={() => goTo("talents")}>
         <ListItemText primary="Talents" />
       </ListItem>
       {/* <ListItem onClick={() => navigate("evenement")}>
@@ -107,10 +112,10 @@ const Header = () => {
       <ListItem onClick={() => navigate("equipe")}>
         <ListItemText primary="Équipe" />
       </ListItem> */}
-      <ListItem onClick={() => navigate("contact")}>
+      <ListItem onClick={() => goTo("contact")}>
         <ListItemText primary="Contact" />
       </ListItem>
-      <ListItem onClick={() => navigate("/")}>
+      <ListItem onClick={() => goTo("/")}>
         <ListItemText primary="Devenir talent B'Com" />
       </ListItem>
     </>
