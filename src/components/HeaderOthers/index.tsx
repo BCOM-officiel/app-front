@@ -20,8 +20,7 @@ const Header = () => {
   React.useEffect(() => {
     // Mettre à jour selectedButton lorsque l'URL change
     setSelectedButton(location.pathname);
-  },
-  [location.pathname]);
+  }, [location.pathname]);
 
   const handleDrawerOpen = () => {
     setDrawerOpen(true);
@@ -34,13 +33,13 @@ const Header = () => {
   const LinkDevenir = (
     <>
       <Button
-        variant='text'
+        variant="text"
         className={`${styles.navButton} ${
           selectedButton === "/" ? styles.selectedWithBar : ""
         }`}
         onClick={() => navigate("/contact")}
         sx={{
-        color: "#dc3e38",
+          color: "#dc3e38",
           fontWeight: 800,
           ":hover": { backgroundColor: "#104262" },
         }}
@@ -96,7 +95,6 @@ const Header = () => {
       </Button>
     </>
   );
-  
 
   const LinksMobile = (
     <>
@@ -109,7 +107,7 @@ const Header = () => {
       {/* <ListItem onClick={() => navigate("evenement")}>
         <ListItemText primary="Évènement" />
       </ListItem> */}
-      <ListItem onClick={() => navigate("team")}>
+      <ListItem onClick={() => goTo("team")}>
         <ListItemText primary="Équipe" />
       </ListItem>
       <ListItem onClick={() => goTo("contact")}>

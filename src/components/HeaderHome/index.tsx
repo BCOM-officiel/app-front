@@ -17,8 +17,6 @@ const HeaderHome = () => {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const [selectedButton, setSelectedButton] = React.useState("");
 
-
-
   React.useEffect(() => {
     // Mettre à jour selectedButton lorsque l'URL change
     setSelectedButton(location.pathname);
@@ -56,7 +54,7 @@ const HeaderHome = () => {
   const LinksLeft = (
     <>
       <Button
-         className={`${styles.navButton} ${
+        className={`${styles.navButton} ${
           selectedButton === "/" ? styles.selectedWithBar : ""
         }`}
         onClick={() => navigate("/")}
@@ -105,7 +103,7 @@ const HeaderHome = () => {
       {/* <ListItem onClick={() => navigate("evenement")}>
         <ListItemText primary="Évènement" />
       </ListItem> */}
-      <ListItem onClick={() => navigate("team")}>
+      <ListItem onClick={() => goTo("team")}>
         <ListItemText primary="Équipe" />
       </ListItem>
       <ListItem onClick={() => goTo("contact")}>
