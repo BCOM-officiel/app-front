@@ -18,6 +18,7 @@ type PageProps = {
   pages: Page[];
 };
 
+
 const TikTokIcon = ({ color = "#000000" }) => {
   return (
     <Box
@@ -193,7 +194,7 @@ export default function Footer({ pages }: PageProps) {
             sx={{ height: "100%" }}
           >
             <Typography variant="caption" color="white">
-              ©2023 JLGRAPHISTES - TOUS DROITS RÉSERVÉS
+              ©2023 B'COM - TOUS DROITS RÉSERVÉS
             </Typography>
           </Grid>
           <Grid

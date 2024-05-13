@@ -3,7 +3,7 @@ import FormControl from "@mui/material/FormControl";
 import FormInput from "../FormInput";
 import FormText from "../FormText";
 import FormSubmit from "../FormSubmit";
-import teamImage from '../../assets/pexels-karolina-grabowska-4471894.jpg';
+import teamImage from '../../assets/Bannière.pageéquipe.png';
 
 export default function ContactTeamForm() {
   return (
@@ -36,7 +36,7 @@ export default function ContactTeamForm() {
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
               <Box><FormInput label="Prénom" required /></Box>
               <Box><FormInput label="Nom" required /></Box>
-              <Box><FormInput label="Date de" required /></Box>
+              <Box><FormInput label="Date de naissance" required /></Box>
               <Box><FormInput label="Email" required /></Box>
               <Box><FormInput label="Téléphone" required /></Box>
             </Box>
